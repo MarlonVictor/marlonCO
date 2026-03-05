@@ -1,0 +1,122 @@
+/* ==========================================
+   FONTES (Google Fonts)
+   ========================================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ==========================================
+     ESTILOS BASE
+     ========================================== */
+
+  body {
+    @apply bg-offwhite-300 text-gray-950;
+    @apply antialiased;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  /* Smooth scroll + fluid root font-size
+     375px → 13px  |  1440px → 16px
+     Todos os rem do site escalam juntos */
+  html {
+    @apply scroll-smooth;
+    font-size: clamp(13px, 0.282vw + 11.94px, 16px);
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-primary-500/30 text-primary-100;
+  }
+}
+
+.font-mono-code {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.font-mono {
+  font-family: "Monomaniac One", monospace;
+  letter-spacing: 0.025em;
+  transform: translateY(-0.125rem);
+}
+
+/* ==========================================
+   REVEAL ANIMATION UTILITIES
+   ========================================== */
+
+/* Delay utilities for staggered animations */
+.reveal-delay-100 {
+  --reveal-delay: 100ms;
+  transition-delay: var(--reveal-delay);
+}
+.reveal-delay-200 {
+  --reveal-delay: 200ms;
+  transition-delay: var(--reveal-delay);
+}
+.reveal-delay-300 {
+  --reveal-delay: 300ms;
+  transition-delay: var(--reveal-delay);
+}
+.reveal-delay-400 {
+  --reveal-delay: 400ms;
+  transition-delay: var(--reveal-delay);
+}
+.reveal-delay-500 {
+  --reveal-delay: 500ms;
+  transition-delay: var(--reveal-delay);
+}
+.reveal-delay-600 {
+  --reveal-delay: 600ms;
+  transition-delay: var(--reveal-delay);
+}
+.reveal-delay-700 {
+  --reveal-delay: 700ms;
+  transition-delay: var(--reveal-delay);
+}
+.reveal-delay-800 {
+  --reveal-delay: 800ms;
+  transition-delay: var(--reveal-delay);
+}
+
+/* Duration utilities */
+.reveal-duration-300 {
+  --reveal-duration: 300ms;
+}
+.reveal-duration-400 {
+  --reveal-duration: 400ms;
+}
+.reveal-duration-500 {
+  --reveal-duration: 500ms;
+}
+.reveal-duration-600 {
+  --reveal-duration: 600ms;
+}
+.reveal-duration-700 {
+  --reveal-duration: 700ms;
+}
+.reveal-duration-800 {
+  --reveal-duration: 800ms;
+}
+.reveal-duration-1000 {
+  --reveal-duration: 1000ms;
+}
+
+/* Distance utilities */
+.reveal-distance-sm {
+  --reveal-distance: 12px;
+}
+.reveal-distance-md {
+  --reveal-distance: 24px;
+}
+.reveal-distance-lg {
+  --reveal-distance: 40px;
+}

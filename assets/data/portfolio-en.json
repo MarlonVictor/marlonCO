@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "links": [
+      {
+        "name": "Home",
+        "href": "#home"
+      }
+    ],
+    "cta": "Contact Me"
+  },
+  "hero": {
+    "name": "Marlon Coimbra",
+    "tagline": "Building the web, one line at a time.",
+    "introduction": "I create experiences driven by excellence, unifying — functionality and design in products that constantly evolve.",
+    "cta": {
+      "primary": {
+        "text": "View Projects",
+        "link": "#projects"
+      },
+      "secondary": {
+        "text": "Resume",
+        "link": "#resume"
+      }
+    },
+    "scroll": "Scroll for more",
+    "since": "Since 2020",
+    "social": {
+      "github": "https://github.com/seu-usuario",
+      "linkedin": "https://linkedin.com/in/seu-usuario",
+      "twitter": "https://twitter.com/seu-usuario",
+      "email": "seu.email@exemplo.com"
+    }
+  },
+  "technologies": {
+    "title": "Technologies"
+  }
+}
