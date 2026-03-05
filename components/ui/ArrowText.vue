@@ -4,8 +4,11 @@
     :class="color === 'light' ? 'text-offwhite-950' : 'text-gray-950'"
   >
     <h3
-      :class="font === 'mono' ? 'inline-flex font-mono' : 'inline-flex'"
-      class="leading-none font-medium text-sm uppercase"
+      :class="[
+        font === 'mono' ? 'inline-flex font-mono' : 'inline-flex',
+        fontSize,
+      ]"
+      class="leading-none font-medium uppercase"
     >
       <span class="block mr-2">(</span>
       {{ text }}
@@ -14,8 +17,8 @@
 
     <Icon
       :name="`lucide:arrow-${arrowSide}`"
-      size="16"
-      class="-translate-y-0.5"
+      :size="fontSize === 'text-sm' ? 16 : fontSize === 'text-base' ? 18 : 20"
+      class="-translate-y-[.125rem]"
     />
   </div>
 </template>
@@ -40,6 +43,11 @@ defineProps({
     type: String,
     default: "mono",
     validator: (value) => ["mono", "normal"].includes(value),
+  },
+  fontSize: {
+    type: String,
+    default: "text-sm",
+    validator: (value) => ["text-sm", "text-base", "text-lg"].includes(value),
   },
 });
 </script>

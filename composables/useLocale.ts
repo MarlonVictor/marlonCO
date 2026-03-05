@@ -1,4 +1,4 @@
-import dataPt from "../assets/data/portfolio.json";
+import dataPt from "../assets/data/portfolio-pt.json";
 import dataEn from "../assets/data/portfolio-en.json";
 import { computed, onMounted, ref } from "vue";
 

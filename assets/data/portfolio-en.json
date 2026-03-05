@@ -4,6 +4,10 @@
       {
         "name": "Home",
         "href": "#home"
+      },
+      {
+        "name": "Services",
+        "href": "#services"
       }
     ],
     "cta": "Contact Me"
@@ -33,5 +37,24 @@
   },
   "technologies": {
     "title": "Technologies"
+  },
+  "services": {
+    "title": "Services & Expertise",
+    "tagline": "Code that moves real products.",
+    "introduction": "From component to full experience — I build interfaces, apps, and products with a focus on quality, performance, and attention to the details that make a difference.",
+    "items": [
+      {
+        "name_line_1": "Development",
+        "name_line_2": "Web Full-Stack"
+      },
+      {
+        "name_line_1": "Automation &",
+        "name_line_2": "AI Solutions"
+      },
+      {
+        "name_line_1": "UI/UX &",
+        "name_line_2": "Design Systems"
+      }
+    ]
   }
 }

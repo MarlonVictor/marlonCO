@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "links": [
+      {
+        "name": "Home",
+        "href": "#home"
+      },
+      {
+        "name": "Serviços",
+        "href": "#services"
+      }
+    ],
+    "cta": "Entre em Contato"
+  },
+  "hero": {
+    "name": "Marlon Coimbra",
+    "tagline": "Construindo a web, uma linha por vez.",
+    "introduction": "Crio experiências orientadas por excelência, unificando — funcionalidade e design em produtos que evoluem constantemente.",
+    "cta": {
+      "primary": {
+        "text": "Ver Projetos",
+        "link": "#projects"
+      },
+      "secondary": {
+        "text": "Ver currículo",
+        "link": "#resume"
+      }
+    },
+    "scroll": "Role para mais informações",
+    "since": "Desde 2020",
+    "social": {
+      "github": "https://github.com/seu-usuario",
+      "linkedin": "https://linkedin.com/in/seu-usuario",
+      "twitter": "https://twitter.com/seu-usuario",
+      "email": "seu.email@exemplo.com"
+    }
+  },
+  "technologies": {
+    "title": "Tecnologias"
+  },
+  "services": {
+    "title": "Serviços e Especializações",
+    "tagline": "Código que move produtos reais.",
+    "introduction": "Do componente à experiência completa — construo interfaces, apps e produtos com foco em qualidade, performance e atenção aos detalhes que fazem a diferença.",
+    "items": [
+      {
+        "name_line_1": "Desenvolvimento",
+        "name_line_2": "Web Full-Stack"
+      },
+      {
+        "name_line_1": "Automação &",
+        "name_line_2": "Soluções com IA"
+      },
+      {
+        "name_line_1": "UI/UX &",
+        "name_line_2": "Design Systems"
+      }
+    ]
+  }
+}
