@@ -2,7 +2,12 @@
   <Nav />
   <Hero />
   <TechCarousel />
-  <Services />
+
+  <div class="p-4">
+    <div class="flex-1 bg-gray-950 rounded-2xl min-h-screen py-20 px-12">
+      <Services />
+    </div>
+  </div>
 </template>
 
 <script setup>

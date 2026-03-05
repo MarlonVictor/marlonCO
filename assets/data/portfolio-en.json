@@ -45,15 +45,44 @@
     "items": [
       {
         "name_line_1": "Development",
-        "name_line_2": "Web Full-Stack"
+        "name_line_2": "Web Full-Stack",
+        "title": "Development Web Full-Stack",
+        "description": "Build complete digital experiences, from backend to interface — websites, systems, WordPress themes, and browser extensions with clean and scalable code.",
+        "stats": [
+          "Landing Pages",
+          "Dashboards & Admin Panels",
+          "Systems for stores and companies",
+          "WordPress Themes & Plugins",
+          "Browser Extensions",
+          "Integrations with External APIs"
+        ]
       },
       {
         "name_line_1": "Automation &",
-        "name_line_2": "AI Solutions"
+        "name_line_2": "AI Solutions",
+        "title": "Automation & AI Solutions",
+        "description": "I use artificial intelligence as part of the process — automating tasks, creating bots, and accelerating product delivery with modern AI tools.",
+        "stats": [
+          "Bots for customer service and businesses",
+          "Content creation automation",
+          "Integration with LLMs (ChatGPT, Claude)",
+          "Workflows with n8n",
+          "Generation of images and texts at scale",
+          "Personalized agents and assistants"
+        ]
       },
       {
         "name_line_1": "UI/UX &",
-        "name_line_2": "Design Systems"
+        "name_line_2": "Design Systems",
+        "title": "UI/UX & Design Systems",
+        "description": "Create interfaces that balance aesthetics and function — from a product's visual identity to reusable components that accelerate development and ensure consistency.",
+        "stats": [
+          "Interface design",
+          "Visual themes and templates",
+          "UI components and libraries",
+          "Responsive and mobile-first design",
+          "Prototyping and screen validation"
+        ]
       }
     ]
   }

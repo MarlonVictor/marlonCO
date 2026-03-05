@@ -1,150 +1,158 @@
 <template>
-  <section id="services" class="p-4">
-    <div class="flex-1 bg-gray-950 rounded-2xl min-h-screen py-20 px-12">
-      <ArrowText
-        :text="data.services.title"
-        arrow-side="down"
-        font-size="text-base"
-      />
+  <section id="services">
+    <ArrowText
+      :text="data.services.title"
+      arrow-side="down"
+      font-size="text-base"
+    />
 
-      <div class="mt-8 flex flex-col gap-4">
-        <h1 class="text-5xl font-normal text-offwhite-100">
-          {{ data.services.tagline }}
-        </h1>
-        <p
-          class="text-sm leading-tight text-offwhite-950 max-w-[32.5rem] text-justify"
-        >
-          {{ data.services.introduction }}
-        </p>
-      </div>
+    <div class="mt-4 lg:mt-8 flex flex-col gap-4">
+      <h1 class="text-4xl lg:text-5xl font-normal text-offwhite-100">
+        {{ data.services.tagline }}
+      </h1>
+      <p
+        class="text-xs lg:text-sm leading-tight text-offwhite-950 max-w-[32.5rem] text-justify"
+      >
+        {{ data.services.introduction }}
+      </p>
+    </div>
 
-      <div class="grid grid-cols-3 gap-2 overflow-hidden mt-16">
-        <ServiceCard>
-          <template #animation>
-            <div class="editor-wrap">
-              <div class="editor-bar">
-                <div class="dot r"></div>
-                <div class="dot y"></div>
-                <div class="dot g"></div>
-                <span class="editor-filename">App.vue</span>
+    <div class="flex gap-2 overflow-hidden mt-16">
+      <ServiceCard v-bind="cardsData[0]" @click="() => cardActiveIndex = 0" :isActive="cardActiveIndex === 0" :isSmallScreen="isSmallScreen" :hasCardActive="hasCardActive">
+        <template #animation>
+          <div class="editor-wrap">
+            <div class="editor-bar">
+              <div class="dot r"></div>
+              <div class="dot y"></div>
+              <div class="dot g"></div>
+              <span class="editor-filename">App.vue</span>
+            </div>
+            <div class="editor-body">
+              <div>
+                <span class="ln">01</span><span class="kw">import</span>
+                <span class="fn mx-1">{ ref }</span>
+                <span class="kw mr-1">from</span>
+                <span class="str">'vue'</span>
               </div>
-              <div class="editor-body">
-                <div>
-                  <span class="ln">01</span><span class="kw">import</span>
-                  <span class="fn mx-1">{ ref }</span>
-                  <span class="kw mr-1">from</span>
-                  <span class="str">'vue'</span>
-                </div>
-                <div>
-                  <span class="ln">02</span><span class="kw">import</span>
-                  <span class="fn mx-1">Layout</span>
-                  <span class="kw mr-1">from</span>
-                  <span class="str">'./Layout.vue'</span>
-                </div>
-                <div>
-                  <span class="ln">03</span
-                  ><span class="cm">// Main component</span>
-                </div>
-                <div class="type-line t1">
-                  <span class="ln">04</span
-                  ><span class="kw mr-1">export const</span>
-                  <span class="fn">Dashboard</span> = () => {
-                </div>
-                <div class="type-line t2">
-                  <span class="ln">05</span>&nbsp;&nbsp;<span class="kw"
-                    >const</span
-                  >
-                  [data] = <span class="fn">ref</span>([])
-                </div>
-                <div class="type-line t3">
-                  <span class="ln">06</span>&nbsp;&nbsp;<span class="kw mr-1"
-                    >return</span
-                  >
-                  <span class="op">&lt;</span
-                  ><span class="fn">Layout</span> data={data}
-                  <span class="op">/&gt;</span>
-                </div>
-                <div class="type-line t4">
-                  <span class="ln">07</span>}<span class="cursor"></span>
-                </div>
+              <div>
+                <span class="ln">02</span><span class="kw">import</span>
+                <span class="fn mx-1">Layout</span>
+                <span class="kw mr-1">from</span>
+                <span class="str">'./Layout.vue'</span>
+              </div>
+              <div>
+                <span class="ln">03</span
+                ><span class="cm">// Main component</span>
+              </div>
+              <div class="type-line t1">
+                <span class="ln">04</span
+                ><span class="kw mr-1">export const</span>
+                <span class="fn">Dashboard</span> = () => {
+              </div>
+              <div class="type-line t2">
+                <span class="ln">05</span>&nbsp;&nbsp;<span class="kw"
+                  >const</span
+                >
+                [data] = <span class="fn">ref</span>([])
+              </div>
+              <div class="type-line t3">
+                <span class="ln">06</span>&nbsp;&nbsp;<span class="kw mr-1"
+                  >return</span
+                >
+                <span class="op">&lt;</span
+                ><span class="fn">Layout</span> data={data}
+                <span class="op">/&gt;</span>
+              </div>
+              <div class="type-line t4">
+                <span class="ln">07</span>}<span class="cursor"></span>
               </div>
             </div>
-          </template>
-          <template #title>
-            {{ data.services.items[0].name_line_1 }}<br />
-            {{ data.services.items[0].name_line_2 }}
-          </template>
-        </ServiceCard>
+          </div>
+        </template>
+        <template #title>
+          {{ data.services.items[0].name_line_1 }}<br />
+          {{ data.services.items[0].name_line_2 }}
+        </template>
+      </ServiceCard>
 
-        <ServiceCard @mouseenter="playVideo()" @mouseleave="pauseVideo()">
-          <template #animation>
-            <video ref="video" class="w-96 h-96 object-cover" muted>
-              <source
-                src="~/assets/animations/render-service.webm"
-                type="video/webm"
-              />
-            </video>
-          </template>
-          <template #title>
-            {{ data.services.items[1].name_line_1 }}<br />
-            {{ data.services.items[1].name_line_2 }}
-          </template>
-        </ServiceCard>
+      <ServiceCard v-bind="cardsData[1]" @click="() => cardActiveIndex = 1" :isActive="cardActiveIndex === 1" @mouseenter="playVideo()" @mouseleave="pauseVideo()" :isSmallScreen="isSmallScreen" :hasCardActive="hasCardActive">
+        <template #animation>
+          <video ref="video" class="w-96 h-96 object-cover" muted>
+            <source
+              src="~/assets/animations/render-service.webm"
+              type="video/webm"
+            />
+          </video>
+        </template>
+        <template #title>
+          {{ data.services.items[1].name_line_1 }}<br />
+          {{ data.services.items[1].name_line_2 }}
+        </template>
+      </ServiceCard>
 
-        <ServiceCard>
-          <template #animation>
-            <div class="ds-wrap">
-              <div>
-                <div class="ds-label">COLOR TOKENS</div>
-                <div class="ds-colors">
-                  <div class="ds-swatch"></div>
-                  <div class="ds-swatch"></div>
-                  <div class="ds-swatch"></div>
-                  <div class="ds-swatch"></div>
-                  <div class="ds-swatch"></div>
-                </div>
-              </div>
-              <div>
-                <div class="ds-label">TYPOGRAPHY</div>
-                <div class="ds-type-item">
-                  <span class="ds-type-label">H1</span
-                  ><span class="ds-type-sample">Headline</span>
-                </div>
-                <div class="ds-type-item">
-                  <span class="ds-type-label">H3</span
-                  ><span class="ds-type-sample">Subheading</span>
-                </div>
-                <div class="ds-type-item">
-                  <span class="ds-type-label">body</span
-                  ><span class="ds-type-sample">Body text regular</span>
-                </div>
-              </div>
-              <div>
-                <div class="ds-label">COMPONENTS</div>
-                <div class="ds-btns">
-                  <div class="ds-btn p">PRIMARY</div>
-                  <div class="ds-btn s">OUTLINE</div>
-                  <div class="ds-btn g">DISABLED</div>
-                </div>
+      <ServiceCard v-bind="cardsData[2]" @click="() => cardActiveIndex = 2" :isActive="cardActiveIndex === 2" :isSmallScreen="isSmallScreen" :hasCardActive="hasCardActive">
+        <template #animation>
+          <div class="ds-wrap">
+            <div>
+              <div class="ds-label">COLOR TOKENS</div>
+              <div class="ds-colors">
+                <div class="ds-swatch"></div>
+                <div class="ds-swatch"></div>
+                <div class="ds-swatch"></div>
+                <div class="ds-swatch"></div>
+                <div class="ds-swatch"></div>
               </div>
             </div>
-          </template>
-          <template #title>
-            {{ data.services.items[2].name_line_1 }}<br />
-            {{ data.services.items[2].name_line_2 }}
-          </template>
-        </ServiceCard>
-      </div>
+            <div>
+              <div class="ds-label">TYPOGRAPHY</div>
+              <div class="ds-type-item">
+                <span class="ds-type-label">H1</span
+                ><span class="ds-type-sample">Headline</span>
+              </div>
+              <div class="ds-type-item">
+                <span class="ds-type-label">H3</span
+                ><span class="ds-type-sample">Subheading</span>
+              </div>
+              <div class="ds-type-item">
+                <span class="ds-type-label">body</span
+                ><span class="ds-type-sample">Body text regular</span>
+              </div>
+            </div>
+            <div>
+              <div class="ds-label">COMPONENTS</div>
+              <div class="ds-btns">
+                <div class="ds-btn p">PRIMARY</div>
+                <div class="ds-btn s">OUTLINE</div>
+                <div class="ds-btn g">DISABLED</div>
+              </div>
+            </div>
+          </div>
+        </template>
+        <template #title>
+          {{ data.services.items[2].name_line_1 }}<br />
+          {{ data.services.items[2].name_line_2 }}
+        </template>
+      </ServiceCard>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
 import ArrowText from "../ui/ArrowText.vue";
 import ServiceCard from "../ui/ServiceCard.vue";
 
 const { data } = useLocale();
+
+const cardActiveIndex = ref(null);
+const hasCardActive = computed(() => cardActiveIndex.value !== null);
+const cardsData = computed(() =>
+  data.value.services.items.map(item => ({
+    title: item.title,
+    description: item.description,
+    stats: item.stats,
+  }))
+);
 
 const video = ref(null);
 
@@ -159,6 +167,29 @@ const pauseVideo = () => {
     video.value.pause();
   }
 };
+
+const isSmallScreen = ref(false);
+
+const checkScreenSize = () => {
+  const isSmall = window.innerWidth < 1024;
+  isSmallScreen.value = isSmall
+
+  if (isSmall && !cardActiveIndex.value) {
+    cardActiveIndex.value = 0;
+  } else if (!cardActiveIndex.value) {
+    cardActiveIndex.value = null;
+  }
+};
+
+onMounted(() => {
+  checkScreenSize();
+  window.addEventListener("resize", checkScreenSize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkScreenSize);
+});
+
 </script>
 
 <style lang="css" scoped>
@@ -362,22 +393,19 @@ const pauseVideo = () => {
 }
 .ds-type-sample {
   font-family: sans-serif;
-  color: #888;
+  font-size: 11px;
+  font-weight: 400;
+  color: #555;
 }
-.ds-type-item:nth-child(1) .ds-type-sample {
+.ds-type-item:nth-child(2) .ds-type-sample {
   font-size: 22px;
   font-weight: 800;
   color: #ddd;
 }
-.ds-type-item:nth-child(2) .ds-type-sample {
+.ds-type-item:nth-child(3) .ds-type-sample {
   font-size: 15px;
   font-weight: 700;
   color: #aaa;
-}
-.ds-type-item:nth-child(3) .ds-type-sample {
-  font-size: 11px;
-  font-weight: 400;
-  color: #555;
 }
 .ds-btns {
   display: flex;

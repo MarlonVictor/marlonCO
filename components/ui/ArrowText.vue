@@ -17,13 +17,15 @@
 
     <Icon
       :name="`lucide:arrow-${arrowSide}`"
-      :size="fontSize === 'text-sm' ? 16 : fontSize === 'text-base' ? 18 : 20"
+      :size="iconSizes[fontSize]"
       class="-translate-y-[.125rem]"
     />
   </div>
 </template>
 
 <script setup>
+import { computed, ref, onMounted, onUnmounted } from "vue";
+
 defineProps({
   text: {
     type: String,
@@ -50,4 +52,39 @@ defineProps({
     validator: (value) => ["text-sm", "text-base", "text-lg"].includes(value),
   },
 });
+
+const isSmallScreen = ref(false);
+
+const checkScreenSize = () => {
+  isSmallScreen.value = window.innerWidth < 1024;
+};
+
+onMounted(() => {
+  checkScreenSize();
+  window.addEventListener("resize", checkScreenSize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkScreenSize);
+});
+
+const iconSizes = computed(() => ({
+  "text-sm": isSmallScreen.value ? 14 : 16,
+  "text-base": isSmallScreen.value ? 16 : 18,
+  "text-lg": isSmallScreen.value ? 18 : 20,
+}));
 </script>
+
+<style scoped>
+@media (max-width: 1024px) {
+  h3.text-sm {
+    font-size: 0.75rem; /* 12px */
+  }
+  h3.text-base {
+    font-size: 0.875rem; /* 14px */
+  }
+  h3.text-lg {
+    font-size: 1rem; /* 16px */
+  }
+}
+</style>

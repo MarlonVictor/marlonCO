@@ -45,15 +45,44 @@
     "items": [
       {
         "name_line_1": "Desenvolvimento",
-        "name_line_2": "Web Full-Stack"
+        "name_line_2": "Web Full-Stack",
+        "title": "Desenvolvimento Web Full-Stack",
+        "description": "Construo experiências digitais completas, do backend à interface — sites, sistemas, temas WordPress e extensões de navegador com código limpo e escalável.",
+        "stats": [
+          "Landing pages",
+          "Dashboards e painéis admin",
+          "Sistemas para lojas e empresas",
+          "Temas & plugins WordPress",
+          "Extensões de navegador",
+          "Integrações com APIs externas"
+        ]
       },
       {
         "name_line_1": "Automação &",
-        "name_line_2": "Soluções com IA"
+        "name_line_2": "Soluções com IA",
+        "title": "Automação & Soluções com IA",
+        "description": "Uso inteligência artificial como parte do processo — automatizando tarefas, criando bots e acelerando a entrega de produtos com ferramentas modernas de IA.",
+        "stats": [
+          "Bots para atendimento e empresas",
+          "Automação de criação de conteúdo",
+          "Integração com LLMs (ChatGPT, Claude)",
+          "Fluxos com n8n",
+          "Geração de imagens e textos em escala",
+          "Agentes e assistentes personalizados"
+        ]
       },
       {
         "name_line_1": "UI/UX &",
-        "name_line_2": "Design Systems"
+        "name_line_2": "Design Systems",
+        "title": "UI/UX & Design Systems",
+        "description": "Crio interfaces que equilibram estética e função — desde a identidade visual de um produto até componentes reutilizáveis que aceleram o desenvolvimento e garantem consistência.",
+        "stats": [
+          "Design de interfaces",
+          "Temas e templates visuais",
+          "Componentes e bibliotecas de UI",
+          "Design responsivo e mobile-first",
+          "Prototipagem e validação de telas"
+        ]
       }
     ]
   }
