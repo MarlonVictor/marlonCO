@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "links": [
+      {
+        "name": "Home",
+        "href": "#home"
+      },
+      {
+        "name": "Serviços",
+        "href": "#services"
+      }
+    ],
+    "cta": "Entre em Contato"
+  },
+  "hero": {
+    "name": "Marlon Coimbra",
+    "tagline": "Construindo a web, uma linha por vez.",
+    "introduction": "Crio experiências orientadas por excelência, unificando — funcionalidade e design em produtos que evoluem constantemente.",
+    "cta": {
+      "primary": {
+        "text": "Ver Projetos",
+        "link": "#projects"
+      },
+      "secondary": {
+        "text": "Ver currículo",
+        "link": "#resume"
+      }
+    },
+    "scroll": "Role para mais informações",
+    "since": "Desde 2020",
+    "social": {
+      "github": "https://github.com/seu-usuario",
+      "linkedin": "https://linkedin.com/in/seu-usuario",
+      "twitter": "https://twitter.com/seu-usuario",
+      "email": "seu.email@exemplo.com"
+    }
+  },
+  "technologies": {
+    "title": "Tecnologias"
+  },
+  "services": {
+    "title": "Serviços e Especializações",
+    "tagline": "Código que move produtos reais.",
+    "introduction": "Do componente à experiência completa — construo interfaces, apps e produtos com foco em qualidade, performance e atenção aos detalhes que fazem a diferença.",
+    "items": [
+      {
+        "name_line_1": "Desenvolvimento",
+        "name_line_2": "Web Full-Stack",
+        "title": "Desenvolvimento Web Full-Stack",
+        "description": "Construo experiências digitais completas, do backend à interface — sites, sistemas, temas WordPress e extensões de navegador com código limpo e escalável.",
+        "stats": [
+          "Landing pages",
+          "Dashboards e painéis admin",
+          "Sistemas para lojas e empresas",
+          "Temas & plugins WordPress",
+          "Extensões de navegador",
+          "Integrações com APIs externas"
+        ]
+      },
+      {
+        "name_line_1": "Automação &",
+        "name_line_2": "Soluções com IA",
+        "title": "Automação & Soluções com IA",
+        "description": "Uso inteligência artificial como parte do processo — automatizando tarefas, criando bots e acelerando a entrega de produtos com ferramentas modernas de IA.",
+        "stats": [
+          "Bots para atendimento e empresas",
+          "Automação de criação de conteúdo",
+          "Integração com LLMs (ChatGPT, Claude)",
+          "Fluxos com n8n",
+          "Geração de imagens e textos em escala",
+          "Agentes e assistentes personalizados"
+        ]
+      },
+      {
+        "name_line_1": "UI/UX &",
+        "name_line_2": "Design Systems",
+        "title": "UI/UX & Design Systems",
+        "description": "Crio interfaces que equilibram estética e função — desde a identidade visual de um produto até componentes reutilizáveis que aceleram o desenvolvimento e garantem consistência.",
+        "stats": [
+          "Design de interfaces",
+          "Temas e templates visuais",
+          "Componentes e bibliotecas de UI",
+          "Design responsivo e mobile-first",
+          "Prototipagem e validação de telas"
+        ]
+      }
+    ]
+  }
+}
