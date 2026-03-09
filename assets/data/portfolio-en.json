@@ -8,6 +8,10 @@
       {
         "name": "Services",
         "href": "#services"
+      },
+      {
+        "name": "About",
+        "href": "#about"
       }
     ],
     "cta": "Contact Me"
@@ -85,5 +89,57 @@
         ]
       }
     ]
+  },
+  "about": {
+    "location": {
+      "city_state": "Rio de Janeiro, Brazil",
+      "available": "Available worldwide",
+      "timer_text": "Current local time"
+    },
+    "setup": ["Machine", "Monitor", "Keyboard", "Mouse"],
+    "contact": {
+      "title": {
+        "line_1": "Let's",
+        "line_2": "talk."
+      },
+      "subtitle": "Direct contact",
+      "cta": "Send message",
+      "description": {
+        "line_1": "I respond within 24 hours.",
+        "line_2": "Projects · Freelance · Collaborations."
+      }
+    },
+    "tools": {
+      "title": "Daily Tools",
+      "subtitle": "Some are constant, others are adjusted as needed."
+    },
+    "beyond": {
+      "title": {
+        "line_1": "Other",
+        "line_2": "Projects."
+      },
+      "subtitle": "Beyond the code",
+      "description": "( coming soon )"
+    },
+    "links": {
+      "title": {
+        "line_1": "Work &",
+        "line_2": "Presence."
+      },
+      "link_list": ["Github", "Linkedin", "Themes", "Extensions", "Resume"],
+      "github": {
+        "title": "GitHub Activity",
+        "contribution": "contributions in the last 12 months"
+      }
+    },
+    "about_me": {
+      "role": "Software Developer",
+      "title": "The Developer",
+      "description": {
+        "line_1": "I started programming out of curiosity: I wanted to understand how things worked beneath what I saw on the screen. Over time, this curiosity turned into a profession — and the profession became something I carry with care.",
+        "line_2": "What keeps me motivated is not technology itself, but what it allows to build. A product that solves a real problem, an interface that makes someone say \"this is easy\" — this kind of result still gives me the same feeling as when I wrote my first working code.",
+        "line_3": "Currently, I am focused on building products with more intention: fewer thrown functionalities, more thoughtful decisions. I believe that good development and good design go hand in hand, and it is at this intersection that I want to operate."
+      }
+    }
   }
 }

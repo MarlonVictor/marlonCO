@@ -19,6 +19,13 @@ export default defineNuxtConfig({
           content: "Portfólio profissional",
         },
       ],
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico",
+        },
+      ],
     },
   },
 

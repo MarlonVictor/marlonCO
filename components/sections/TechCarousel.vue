@@ -70,22 +70,7 @@ const technologies = [
 
   { name: "Node.js", icon: "simple-icons:nodedotjs" },
   { name: "MongoDB", icon: "simple-icons:mongodb" },
-  { name: "Supabase", icon: "simple-icons:supabase" },
   { name: "Prisma ORM", icon: "simple-icons:prisma" },
-  // { name: "Python", icon: "simple-icons:python", color: "text-blue-400" },
-  // { name: "GitHub", icon: "simple-icons:github", color: "text-black" },
-  // { name: "Figma", icon: "simple-icons:figma", color: "text-purple-500" },
-  // {
-  //   name: "VS Code",
-  //   icon: "simple-icons:visualstudiocode",
-  //   color: "text-blue-500",
-  // },
-  // { name: "OpenAI", icon: "simple-icons:openai", color: "text-black" },
-  // {
-  //   name: "Docker",
-  //   icon: "simple-icons:docker",
-  //   color: "text-[#2496ED]",
-  // },
 ];
 </script>
 

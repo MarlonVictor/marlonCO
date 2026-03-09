@@ -1,5 +1,5 @@
 <template>
-  <section id="services">
+  <section id="services" class="py-20">
     <ArrowText
       :text="data.services.title"
       arrow-side="down"

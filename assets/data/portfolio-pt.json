@@ -8,6 +8,10 @@
       {
         "name": "Serviços",
         "href": "#services"
+      },
+      {
+        "name": "Sobre",
+        "href": "#about"
       }
     ],
     "cta": "Entre em Contato"
@@ -85,5 +89,57 @@
         ]
       }
     ]
+  },
+  "about": {
+    "location": {
+      "city_state": "Rio de Janeiro, Brasil",
+      "available": "Disponível em todo o mundo",
+      "timer_text": "Hora local atual"
+    },
+    "setup": ["Máquina", "Monitor", "Teclado", "Mouse"],
+    "contact": {
+      "title": {
+        "line_1": "Vamos",
+        "line_2": "conversar."
+      },
+      "subtitle": "Contato direto",
+      "cta": "Enviar mensagem",
+      "description": {
+        "line_1": "Respondo em até 24h.",
+        "line_2": "Projetos · Freela · Colaborações."
+      }
+    },
+    "tools": {
+      "title": "Ferramentas do dia a dia",
+      "subtitle": "Algumas constantes, outras conforme a necessidade"
+    },
+    "beyond": {
+      "title": {
+        "line_1": "Outros",
+        "line_2": "Projetos."
+      },
+      "subtitle": "Além do código",
+      "description": "( em breve )"
+    },
+    "links": {
+      "title": {
+        "line_1": "Trabalho &",
+        "line_2": "presença."
+      },
+      "link_list": ["Github", "Linkedin", "Temas", "Extensões", "Currículo"],
+      "github": {
+        "title": "Atividade no GitHub",
+        "contribution": "contribuições nos últimos 12 meses"
+      }
+    },
+    "about_me": {
+      "role": "Desenvolvedor de Software",
+      "title": "O Desenvolvedor",
+      "description": {
+        "line_1": "Comecei a programar por curiosidade: queria entender como as coisas funcionavam por baixo do que eu via na tela. Com o tempo, essa curiosidade virou profissão — e a profissão virou algo que carrego com cuidado.",
+        "line_2": "O que me mantém motivado não é a tecnologia em si, mas o que ela permite construir. Um produto que resolve um problema real, uma interface que faz alguém dizer \"isso é fácil\" — esse tipo de resultado ainda me dá a mesma sensação de quando escrevi meu primeiro código funcionando.",
+        "line_3": "Atualmente estou focado em construir produtos com mais intenção: menos funcionalidades jogadas, mais decisões pensadas. Acredito que bom desenvolvimento e bom design andam juntos, e é nessa intersecção que quero atuar."
+      }
+    }
   }
 }
