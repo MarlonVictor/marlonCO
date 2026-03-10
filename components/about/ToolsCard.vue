@@ -1,17 +1,21 @@
 <template>
   <div
-    class="border border-[#ffffff15] rounded-xl h-[7.5rem] col-span-7 flex items-center py-4 px-6 gap-16"
+    class="border border-[#ffffff15] rounded-xl h-[10rem] md:h-[7.5rem] col-span-7 flex flex-col md:flex-row items-center py-4 px-6 md:gap-16"
   >
-    <div className="text-xs !leading-[1.6]">
-      <p class="text-offwhite-950 whitespace-nowrap uppercase font-mono">
+    <div className="!leading-[1.6]">
+      <p
+        class="text-xs text-offwhite-950 whitespace-nowrap uppercase font-mono text-center md:text-left"
+      >
         {{ data.about.tools.title }}
       </p>
-      <p class="text-offwhite-950 opacity-80 whitespace-nowrap">
+      <p
+        class="text-[.625rem] lg:text-xs text-offwhite-950 opacity-80 whitespace-nowrap text-center md:text-left"
+      >
         {{ data.about.tools.subtitle }}
       </p>
     </div>
 
-    <div class="relative !overflow-hidden">
+    <div class="relative !overflow-hidden h-auto flex w-full min-w-0">
       <div
         class="absolute left-0 top-0 bottom-0 w-48 bg-gradient-to-r from-gray-950 to-transparent z-10 pointer-events-none"
       ></div>
@@ -24,7 +28,7 @@
           :duration="30"
           :clone="true"
           :gap="64"
-          class="py-6 !overflow-hidden"
+          class="py-6 !overflow-hidden w-full"
         >
           <div
             v-for="tool in TOOLS"

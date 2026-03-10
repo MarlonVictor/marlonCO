@@ -1,12 +1,12 @@
 <template>
   <div
-    class="border border-[#ffffff15] rounded-xl col-span-3 flex flex-col items-center justify-between p-4 h-[30rem] overflow-hidden relative"
+    class="border border-[#ffffff15] rounded-xl row-start-1 lg:row-start-auto col-span-7 lg:col-span-3 flex flex-col items-center justify-between p-4 h-[30rem] overflow-hidden relative"
     data-cursor-hover
     @mouseenter="isCardHovered = true"
     @mouseleave="isCardHovered = false"
   >
     <div class="py-8 flex flex-col items-center gap-2">
-      <h2 class="text-offwhite-100 text-3xl">
+      <h2 class="text-offwhite-100 text-3xl text-center">
         {{ data.about.location.city_state }}
       </h2>
 

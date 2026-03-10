@@ -1,32 +1,30 @@
 <template>
   <div
-    class="border border-[#ffffff15] rounded-xl h-[30rem] p-6 col-span-3 flex flex-col justify-between"
+    class="border border-[#ffffff15] rounded-xl md:h-[30rem] p-6 col-span-7 lg:col-span-4 xl:col-span-3 flex flex-col gap-8 justify-between"
   >
     <div class="flex justify-between items-start">
-      <h2
-        class="text-offwhite-100 text-3xl font-semibold mt-2 leading-[0.9]"
-      >
-        {{ data.about.links.title.line_1 }} <br />
+      <h2 class="text-offwhite-100 text-3xl font-semibold mt-2 leading-[0.9]">
+        {{ data.about.links.title.line_1 }} <br class="hidden md:block" />
         {{ data.about.links.title.line_2 }}
       </h2>
 
       <span
-        class="text-offwhite-950 uppercase font-mono text-xs flex items-center gap-1 !tracking-wider"
+        class="text-offwhite-950 uppercase font-mono text-xs hidden md:flex items-center gap-1 !tracking-wider"
       >
         ( Links )
         <Icon name="lucide:arrow-down" size="16" class="" />
       </span>
     </div>
 
-    <!-- LINKS ROW -->
-    <div class="flex gap-3">
+    <!-- LINKS -->
+    <div class="flex flex-col md:flex-row gap-3">
       <a
         v-for="link in links"
         :key="link.label"
         :href="link.url"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex-1 flex flex-col items-center justify-center gap-4 py-4 px-3 border border-gray-900 rounded-md transition hover:bg-[#ffffff10] hover:-translate-y-1"
+        class="flex-1 flex flex-row md:flex-col items-center md:justify-center gap-4 py-2 md:py-4 px-3 border border-gray-900 rounded-md transition hover:bg-[#ffffff10] hover:-translate-y-1 group"
         :class="{ 'pointer-events-none opacity-50': link.disabled }"
       >
         <!-- <component :is="link.icon" /> -->
@@ -41,11 +39,17 @@
         >
           {{ link.label }}
         </span>
+
+        <Icon
+          name="lucide:arrow-right"
+          size="16"
+          class="text-offwhite-950 ml-auto group-hover:text-offwhite-100 transition md:hidden"
+        />
       </a>
     </div>
 
     <!-- GITHUB ACTIVITY -->
-    <div class="flex flex-col gap-3">
+    <div class="hidden md:flex flex-col gap-3">
       <div class="flex items-center gap-2">
         <Icon
           name="lucide:github"

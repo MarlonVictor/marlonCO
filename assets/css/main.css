@@ -26,11 +26,17 @@
   }
 
   /* Smooth scroll + fluid root font-size
-     375px → 13px  |  1440px → 16px
+     375px → 13px  |  1440px → 16px  |  2048px+ → 22px
      Todos os rem do site escalam juntos */
   html {
     @apply scroll-smooth;
     font-size: clamp(13px, 0.282vw + 11.94px, 16px);
+  }
+
+  @media (min-width: 2048px) {
+    html {
+      font-size: 22px;
+    }
   }
 
   /* Selection color */

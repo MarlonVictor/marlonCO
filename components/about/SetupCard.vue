@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border border-[#ffffff15] rounded-xl flex-1 p-4 flex flex-col gap-4"
+    class="border border-[#ffffff15] rounded-xl flex-1 p-4 hidden md:flex flex-col gap-4"
   >
     <span className="text-offwhite-950 text-sm font-mono uppercase">
       Setup

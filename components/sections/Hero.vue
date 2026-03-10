@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="h-screen p-4 flex relative">
+  <section id="home" class="h-screen p-2 md:p-4 flex relative">
     <SpaceBackground class="flex-1 rounded-2xl">
       <div
         class="flex flex-col items-center text-center lg:items-start lg:text-left justify-center p-8 h-full absolute -top-40 left-0 right-0 lg:relative lg:top-0"

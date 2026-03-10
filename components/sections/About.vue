@@ -1,9 +1,9 @@
 <template>
-  <section id="about" class="pt-10 pb-20">
+  <section id="about" class="py-10 md:pb-20">
     <ArrowText text="sobre" arrow-side="down" font-size="text-base" />
 
     <div class="grid grid-cols-7 mt-10 gap-2">
-      <div class="flex flex-col gap-2 h-[30rem]">
+      <div class="hidden xl:flex flex-col gap-2 h-[30rem]">
         <BeyondCard />
         <SetupCard />
       </div>
@@ -11,8 +11,16 @@
       <LinksCard />
       <LocationCard />
 
+      <div
+        class="grid md:grid-cols-3 xl:hidden flex-col gap-2 md:h-[15rem] col-span-7"
+      >
+        <BeyondCard />
+        <SetupCard />
+        <ContactCard />
+      </div>
+
       <AboutCard />
-      <ContactCard />
+      <ContactCard class="hidden xl:flex" />
 
       <ToolsCard />
     </div>

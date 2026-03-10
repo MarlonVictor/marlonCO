@@ -3,8 +3,8 @@
   <Hero />
   <TechCarousel />
 
-  <div class="p-4">
-    <div class="flex-1 bg-gray-950 rounded-2xl min-h-screen px-12">
+  <div class="p-2 md:p-4">
+    <div class="flex-1 bg-gray-950 rounded-2xl min-h-screen px-8 md:px-12">
       <Services />
       <About />
     </div>
