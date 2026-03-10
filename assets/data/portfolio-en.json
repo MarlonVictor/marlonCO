@@ -107,6 +107,19 @@
       "description": {
         "line_1": "I respond within 24 hours.",
         "line_2": "Projects · Freelance · Collaborations."
+      },
+      "popup": {
+        "title": "Get in Touch",
+        "description": "I'm always open to discussing new projects, creative ideas or opportunities. Let's connect!",
+        "quick_contact": "Quick contact",
+        "email_label": "Email",
+        "send_message": "Send a message",
+        "name_label": "Name",
+        "name_placeholder": "Your name",
+        "email_placeholder": "your@email.com",
+        "message_label": "Message",
+        "message_placeholder": "Tell me about your project...",
+        "submit": "Send Message"
       }
     },
     "tools": {

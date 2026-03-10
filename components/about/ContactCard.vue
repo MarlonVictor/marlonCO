@@ -31,6 +31,7 @@
         color="light"
         class="!rounded-md"
         sizeFull
+        @click="openContactPopup?.()"
       />
 
       <p className="text-xs text-offwhite-950 opacity-80 hidden xl:block">
@@ -45,4 +46,5 @@
 import ButtonAnimated from "../ui/ButtonAnimated.vue";
 
 const { data } = useLocale();
+const openContactPopup = inject("openContactPopup");
 </script>

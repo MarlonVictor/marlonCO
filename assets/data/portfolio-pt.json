@@ -107,6 +107,19 @@
       "description": {
         "line_1": "Respondo em até 24h.",
         "line_2": "Projetos · Freela · Colaborações."
+      },
+      "popup": {
+        "title": "Entre em Contato",
+        "description": "Estou sempre aberto para discutir novos projetos, ideias criativas ou oportunidades. Vamos conectar!",
+        "quick_contact": "Contato rápido",
+        "email_label": "Email",
+        "send_message": "Enviar uma mensagem",
+        "name_label": "Nome",
+        "name_placeholder": "Seu nome",
+        "email_placeholder": "seu@email.com",
+        "message_label": "Mensagem",
+        "message_placeholder": "Conte-me sobre seu projeto...",
+        "submit": "Enviar Mensagem"
       }
     },
     "tools": {

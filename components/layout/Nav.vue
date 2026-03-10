@@ -27,6 +27,8 @@
 
       <!-- Desktop language switcher (hidden on ≤ 1024px) -->
       <div class="hidden lg:flex items-center gap-6 z-10 relative">
+        <ButtonAnimated :text="data.nav.cta" @click="openContactPopup?.()" />
+
         <ul
           class="flex items-center text-offwhite-200 text-base font-mono space-x-2"
         >
@@ -143,6 +145,7 @@ import HoverText from "../ui/HoverText.vue";
 import ButtonAnimated from "../ui/ButtonAnimated.vue";
 
 const { data, switchLanguage } = useLocale();
+const openContactPopup = inject("openContactPopup");
 
 const isVisible = ref(true);
 const menuOpen = ref(false);
