@@ -9,6 +9,17 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "sans-serif",
+        ],
+        mono: ['"Monomaniac One"', "monospace"],
+        "mono-code": ['"JetBrains Mono"', "monospace"],
+      },
       colors: {
         offwhite: {
           950: "#878477",

@@ -4,7 +4,8 @@
     :class="
       color === 'dark'
         ? 'bg-black text-offwhite-100'
-        : 'bg-offwhite-300 text-gray-900'
+        : 'bg-offwhite-300 text-gray-900',
+      sizeFull && 'w-full justify-between'
     "
   >
     <span class="text-sm font-medium font-mono uppercase">
@@ -31,5 +32,9 @@ defineProps({
       return ["light", "dark"].includes(value);
     },
   },
+  sizeFull: {
+    type: Boolean,
+    default: false,
+  }
 });
 </script>
