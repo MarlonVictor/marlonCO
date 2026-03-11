@@ -3,7 +3,7 @@
     class="border border-[#ffffff15] rounded-xl xl:col-span-2 h-full xl:h-[30rem] p-4 xl:p-6 flex flex-col justify-between"
   >
     <div class="-translate-y-1 xl:!translate-y-0">
-      <span className="text-offwhite-950 text-sm font-mono uppercase">
+      <span class="text-offwhite-950 text-sm font-mono uppercase">
         {{ data.about.contact.subtitle }}
       </span>
       <h2
@@ -13,7 +13,7 @@
         {{ data.about.contact.title.line_2 }}
       </h2>
 
-      <div className="flex items-center gap-2 mt-2 group" data-cursor-hover>
+      <div class="flex items-center gap-2 mt-2 group" data-cursor-hover>
         <span class="text-offwhite-950 text-xs !tracking-wide">
           umarlonco@gmail.com
         </span>
@@ -34,7 +34,7 @@
         @click="openContactPopup?.()"
       />
 
-      <p className="text-xs text-offwhite-950 opacity-80 hidden xl:block">
+      <p class="text-xs text-offwhite-950 opacity-80 hidden xl:block">
         {{ data.about.contact.description.line_1 }} <br />
         {{ data.about.contact.description.line_2 }}
       </p>

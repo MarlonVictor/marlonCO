@@ -10,10 +10,10 @@
         {{ data.about.location.city_state }}
       </h2>
 
-      <div className="flex items-center gap-2">
+      <div class="flex flex-nowrap items-center gap-2">
         <div
           style="box-shadow: 0 0 7px #4ade80"
-          className="size-2 rounded-full bg-[#4ade80] animate-pulse"
+          class="size-2 rounded-full bg-[#4ade80] animate-pulse -translate-y-px"
         />
         <span class="text-offwhite-950 text-sm font-mono uppercase">
           {{ data.about.location.available }}

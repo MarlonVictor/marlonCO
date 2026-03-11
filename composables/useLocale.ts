@@ -1,21 +1,20 @@
 import dataPt from "../assets/data/portfolio-pt.json";
 import dataEn from "../assets/data/portfolio-en.json";
-import { computed, onMounted, ref } from "vue";
+import { computed, ref } from "vue";
+import { useRequestURL } from "nuxt/app";
 
 const currentLang = ref("pt-BR");
 let langInitialized = false;
 
 export const useLocale = () => {
-  // Detecta idioma da URL no client (apenas uma vez, no mount)
+  // Detecta idioma da URL no servidor e cliente
   if (!langInitialized) {
-    onMounted(() => {
-      const params = new URLSearchParams(window.location.search);
-      const lang = params.get("lang");
-      if (lang === "en") {
-        currentLang.value = "en";
-      }
-      langInitialized = true;
-    });
+    const url = useRequestURL();
+    const lang = url.searchParams.get("lang");
+    if (lang === "en") {
+      currentLang.value = "en";
+    }
+    langInitialized = true;
   }
 
   const data = computed(() => {

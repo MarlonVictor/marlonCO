@@ -2,7 +2,7 @@
   <div
     class="border border-[#ffffff15] rounded-xl h-[10rem] md:h-[7.5rem] col-span-7 flex flex-col md:flex-row items-center py-4 px-6 md:gap-16"
   >
-    <div className="!leading-[1.6]">
+    <div class="!leading-[1.6]">
       <p
         class="text-xs text-offwhite-950 whitespace-nowrap uppercase font-mono text-center md:text-left"
       >

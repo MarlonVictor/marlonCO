@@ -5,18 +5,26 @@
     <div
       class="flex-1 flex flex-col md:flex-row gap-6 md:gap-8 rounded-xl overflow-hidden"
     >
-      <div class="relative flex h-[20rem] md:h-[28rem] w-full md:max-w-[25rem] p-4">
+      <div
+        class="relative flex h-[20rem] md:h-[28rem] w-full md:max-w-[25rem] p-4"
+      >
         <img
           :src="avatar"
           class="absolute inset-0 size-full object-cover rounded-xl md:rounded-none"
         />
 
-        <span class="blocl absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#00000090] to-transparent" />
+        <span
+          class="blocl absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#00000090] to-transparent"
+        />
 
         <div class="flex flex-col gap-1 mt-auto">
-          <h2 class="text-offwhite-100 text-2xl md:text-3xl z-10">Marlon Coimbra</h2>
+          <h2 class="text-offwhite-100 text-2xl md:text-3xl z-10">
+            Marlon Coimbra
+          </h2>
 
-          <span class="text-offwhite-950 text-xs md:text-sm font-mono uppercase">
+          <span
+            class="text-offwhite-950 text-xs md:text-sm font-mono uppercase"
+          >
             {{ data.about.about_me.role }} •
             <span class="tracking-wider">MARLON.CO</span>
           </span>
@@ -30,7 +38,7 @@
           {{ data.about.about_me.title }}
         </h2>
 
-        <p className="text-xs text-offwhite-100">
+        <p class="text-xs text-offwhite-100">
           {{ data.about.about_me.description.line_1 }}
           <br /><br />
           {{ data.about.about_me.description.line_2 }}
