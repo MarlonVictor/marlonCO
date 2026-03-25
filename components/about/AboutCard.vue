@@ -56,7 +56,7 @@
           <Icon
             name="lucide:arrow-right"
             size="12"
-            class="transition group-hover:translate-x-1"
+            class="transition-transform duration-300 group-hover:-rotate-45"
           />
         </a>
       </div>

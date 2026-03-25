@@ -6,6 +6,10 @@
         "href": "#home"
       },
       {
+        "name": "Projects",
+        "href": "#projects"
+      },
+      {
         "name": "Services",
         "href": "#services"
       },
@@ -154,5 +158,332 @@
         "line_3": "Currently, I am focused on building products with more intention: fewer thrown functionalities, more thoughtful decisions. I believe that good development and good design go hand in hand, and it is at this intersection that I want to operate."
       }
     }
+  },
+  "projects": {
+    "title": {
+      "line_1": "Everything that has been built,",
+      "line_2": "gathered right here."
+    },
+    "subtitle": "Works",
+    "categories": {
+      "client": {
+        "name": "Client Work",
+        "description": "Projects developed for real clients",
+        "color": "#91C9B4"
+      },
+      "own": {
+        "name": "Side projects",
+        "description": "Extensions, apps, and tools published on my own initiative",
+        "color": "#BDB8E2"
+      },
+      "study": {
+        "name": "Experiments",
+        "description": "Projects from courses, events, and personal learning",
+        "color": "#D1CDC6"
+      }
+    },
+    "filter": {
+      "button": "Filter projects",
+      "placeholder": "Filter projects...",
+      "category_label": "Category",
+      "type_label": "Type",
+      "projects_label": "Projects",
+      "all": "All"
+    },
+    "subcategories": {
+      "site": "Websites",
+      "system": "Web apps",
+      "app": "Mobile apps",
+      "extension": "Browser extensions",
+      "theme": "WordPress Themes",
+      "bot": "Bots & automation"
+    },
+    "project_stats": {
+      "client": "Client",
+      "event": "Event",
+      "year": "Year"
+    },
+    "project_list_out": [
+      {
+        "name": "nlwHappy",
+        "description": "Descrição do projeto 1.",
+        "link_github": "https://github.com/MarlonVictor/nlwHappy",
+        "link_live": "#",
+        "status": "Antigo",
+        "year": "2020",
+        "category": "study"
+      },
+      {
+        "name": "promoBox",
+        "description": "Descrição do projeto 2.",
+        "link_github": "https://github.com/MarlonVictor/promoBox",
+        "link_live": "https://promobox.netlify.app/",
+        "status": "Precisa de ajuste",
+        "year": "2020",
+        "category": "study"
+      },
+      {
+        "name": "moveNow",
+        "description": "Descrição do projeto 5.",
+        "link_github": "https://github.com/MarlonVictor/moveNow",
+        "link_live": "https://movenow-timer.vercel.app/",
+        "status": "Precisa de ajuste",
+        "year": "2020",
+        "category": "study"
+      },
+      {
+        "name": "nlwHeart",
+        "description": "Descrição do projeto 9.",
+        "link_github": "https://github.com/MarlonVictor/nlwHeart",
+        "link_live": "https://dowhile-demo.netlify.app/",
+        "status": "Pronto",
+        "year": "2020",
+        "category": "study"
+      },
+      {
+        "name": "eventLab",
+        "description": "Descrição do projeto 11.",
+        "link_github": "https://github.com/MarlonVictor/eventLab",
+        "link_live": "https://eventlab.vercel.app/",
+        "status": "Precisa de ajuste",
+        "year": "2020",
+        "category": "study"
+      },
+      {
+        "name": "nlwEcoleta",
+        "description": "Descrição do projeto 12.",
+        "link_github": "https://github.com/MarlonVictor/nlwEcoleta",
+        "link_live": "#",
+        "status": "Antigo",
+        "year": "2020",
+        "category": "study"
+      },
+      {
+        "name": "timelineSpace",
+        "description": "Descrição do projeto 16.",
+        "link_github": "https://github.com/MarlonVictor/timelineSpace",
+        "link_live": "https://timelinespace.vercel.app/",
+        "status": "Pronto",
+        "year": "2020",
+        "category": "study"
+      },
+      {
+        "name": "reactFlix",
+        "description": "Descrição do projeto 18.",
+        "link_github": "https://github.com/MarlonVictor/reactFlix",
+        "link_live": "https://reactflix.netlify.app/",
+        "status": "Precisa de ajuste",
+        "year": "2020",
+        "category": "study"
+      },
+      {},
+      {
+        "name": "weatherViewer",
+        "description": "Descrição do projeto 3.",
+        "link_github": "https://github.com/MarlonVictor/weatherViewer",
+        "link_live": "https://weatherviewer.vercel.app/",
+        "status": "Precisa de ajuste",
+        "year": "2020",
+        "category": "study",
+        "tecnologies": ["Next.js", "Tailwind CSS", "Framer Motion"]
+      },
+      {
+        "name": "tuneNation",
+        "description": "Descrição do projeto 6.",
+        "link_github": "https://github.com/MarlonVictor/tuneNation",
+        "link_live": "https://tunenation.vercel.app/",
+        "status": "Precisa de ajuste",
+        "year": "2021",
+        "category": "study",
+        "tecnologies": ["Next.js", "TypeScript", "Styled Components", "DatoCMS"]
+      },
+      {
+        "name": "viewersAsk",
+        "description": "Descrição do projeto 7.",
+        "link_github": "https://github.com/MarlonVictor/viewersAsk",
+        "link_live": "https://viewersask.vercel.app/",
+        "status": "Pronto",
+        "year": "2021",
+        "category": "study",
+        "tecnologies": [
+          "React",
+          "TypeScript",
+          "Styled Components",
+          "Firebase",
+          "Jest"
+        ]
+      },
+      {
+        "name": "myFinances",
+        "description": "Descrição do projeto 8.",
+        "link_github": "https://github.com/MarlonVictor/myFinances",
+        "link_live": "https://myfinances-ten.vercel.app/",
+        "status": "Precisa de ajuste",
+        "year": "2021",
+        "category": "study",
+        "tecnologies": [
+          "React",
+          "TypeScript",
+          "SASS",
+          "Firebase",
+          "Formik",
+          "Framer Motion",
+          "Jest"
+        ]
+      },
+      {
+        "name": "lyricsApp",
+        "description": "Descrição do projeto 14.",
+        "link_github": "https://github.com/MarlonVictor/lyricsApp",
+        "link_live": "https://applyrics.netlify.app/src/",
+        "status": "Precisa de ajuste",
+        "year": "2020",
+        "category": "study",
+        "tecnologies": ["HTML5", "CSS", "JavaScript"]
+      },
+      {
+        "name": "myOrbit",
+        "description": "Descrição do projeto 17.",
+        "link_github": "https://github.com/MarlonVictor/myOrbit",
+        "link_live": "",
+        "status": "Pronto",
+        "year": "2024",
+        "category": "study",
+        "tecnologies": [
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Radix-ui",
+          "Zod",
+          "Node.js",
+          "PostgreSQL"
+        ]
+      }
+    ],
+    "project_list": [
+      {
+        "name": "qrCO",
+        "title": "Privacy and instant convenience.",
+        "description": "A browser extension focused on privacy and speed, allowing instant generation of QR Codes for any page or content without your data ever leaving your device.",
+        "full_description": "<p>The <b>qrCO</b> was developed under the pillar of data sovereignty. In a scenario where privacy is often neglected, this extension operates 100% locally: no servers, no tracking, and no need for registration. Using pure <b>JavaScript</b> to ensure lightness and compatibility, the tool allows converting the current page URL or any custom text into high-quality QR Codes in PNG or SVG formats.</p><p>The interface was designed following a modern and intuitive Dark Mode aesthetic, optimized to be accessed through a small pop-up window, eliminating distractions and external tabs. As an <b>open-source</b> project, qrCO offers full technical transparency, allowing any developer to audit the local processing, reinforcing the commitment to a safer and more functional web.</p>",
+        "client": "Own Products",
+        "event": "",
+        "link_github": "",
+        "link_live": "https://chromewebstore.google.com/detail/qrco-qr-code-generator/bhomhlbhidhmmlnghaapgegphpeiciog",
+        "status": "Pronto",
+        "year": "2026",
+        "category": "own",
+        "tecnologies": ["JavaScript", "Browser Extension", "Open Source"],
+        "image": "/images/projects/qrco.png",
+        "image_position": "0 -400px",
+        "main_order": 4
+      },
+      {
+        "name": "vueMyNotes",
+        "title": "Transforming spoken thoughts into permanent records.",
+        "description": "An intelligent note organizer that uses voice recognition to convert audio into text in real-time. Originally conceived in React, the project was fully migrated and optimized for the Vue.js ecosystem.",
+        "full_description": "<p>The <b>vueMyNotes</b> redefines idea capture by integrating the <b>Web Speech API</b> for instant and accurate transcription. The key differentiator of this project lies in its technical evolution: the application was the stage for a strategic migration from React to <b>Vue.js</b>, allowing the exploration of Vue's reactivity and the modularity of <b>Radix UI</b> to ensure accessibility and consistent interface components.</p><p>Styling with <b>Tailwind CSS</b> ensures a clean, content-focused interface, while the use of <b>TypeScript</b> guarantees code robustness. Beyond the core features developed during the NLW Expert event, I implemented UX improvements and refactorings that made the note-taking system more fluid, demonstrating the ability to adapt modern technologies to solve everyday productivity problems.</p>",
+        "client": "",
+        "event": "NLW Expert (Study & Refactoring)",
+        "link_github": "https://github.com/MarlonVictor/vueMyNotes",
+        "link_live": "https://vue-my-notes.vercel.app",
+        "status": "Precisa de ajuste",
+        "year": "2024",
+        "category": "study",
+        "tecnologies": ["Vue.js", "TypeScript", "Tailwind CSS", "Radix-ui"],
+        "image": "/images/projects/vuemynotes.png",
+        "image_position": "",
+        "main_order": 5
+      },
+      {
+        "name": "JokerApp",
+        "title": "An architecture for endless possibilities.",
+        "description": "A modular foundation for high-performance landing pages, designed to be fully adaptable to any visual identity through a robust system of themes and reusable components.",
+        "full_description": "<p>The <b>JokerApp</b> was born out of the need to create a frontend structure that wasn't tied to a single design. Developed during the Origin track of NLW Return, the project focuses on creating \"joker\" components that can be quickly customized to meet different market niches. The application's strength lies in the strategic implementation of <b>Tailwind CSS</b>, which allowed the creation of a dynamic theme system, where colors, typography, and spacing can be globally altered without compromising code integrity.</p><p>Using <b>TypeScript</b> to ensure predictability and interface safety, JokerApp serves as a high-level boilerplate for the rapid launch of landing pages. The structure was designed to be lightweight, accessible, and fully responsive, ensuring a consistent user experience across any device, regardless of the applied theme.</p>",
+        "client": "",
+        "event": "Rocketseat (NLW Return)",
+        "link_github": "https://github.com/MarlonVictor/jokerApp",
+        "link_live": "https://joker-app.vercel.app",
+        "status": "Precisa de ajuste",
+        "year": "2022",
+        "category": "study",
+        "tecnologies": ["HTML5", "Tailwind CSS", "TypeScript", "Theming"],
+        "image": "/images/projects/jokerapp.png",
+        "image_position": "0 -1000px",
+        "main_order": 3
+      },
+      {
+        "name": "RocketCast",
+        "title": "Native experience and performance.",
+        "description": "A high-performance Progressive Web App developed for technology enthusiasts, focused on providing an immersive and fluid experience for consuming Rocketseat podcasts.",
+        "full_description": "<p>The RocketCast was designed to elevate the way developers interact with audio content. More than just a simple player, the project focuses on delivering an interface that behaves like a native application, leveraging the capabilities of a <b>Progressive Web App (PWA)</b> to ensure accessibility and speed.</p><p>Developed with <b>Next.js</b> and <b>TypeScript</b>, the application prioritizes type safety and optimized rendering. For the interface, I used <b>Styled Components</b> for visual structuring and <b>Framer Motion</b> to create smooth transitions between pages and feedback interactions in the audio player. The data structure was simulated via <b>JSON Server</b>, allowing a complete flow of listing, searching episode metadata, and precise playback controls, such as volume and real-time progress.</p>",
+        "client": "",
+        "event": "Rocketseat - Next Level Week #05",
+        "link_github": "https://github.com/MarlonVictor/rocketCast",
+        "link_live": "https://rocketcast.vercel.app",
+        "status": "Pronto",
+        "year": "2021",
+        "category": "study",
+        "tecnologies": [
+          "Next.js",
+          "TypeScript",
+          "Styled Components",
+          "Framer Motion",
+          "JSON Server"
+        ],
+        "image": "/images/projects/rocketcast.gif",
+        "image_position": "",
+        "main_order": 1
+      },
+      {
+        "name": "nlwProffy",
+        "title": "Connecting minds and democratizing online education.",
+        "description": "A full-stack and minimalist online study platform designed to bring students and teachers together in an agile and intuitive way, democratizing access to education. Developed during the NLW Omnistack track by Rocketseat.",
+        "full_description": "<p>Proffy was conceived as a complete ecosystem to connect those who want to teach with those who want to learn in a simplified and direct way, overcoming geographical and bureaucratic barriers. The application covers three main fronts: a robust and scalable backend in <b>Node.js</b> with <b>Express</b> and <b>SQLite</b> for secure profile and schedule management, a responsive and user-friendly web frontend in <b>React</b> for an immersive desktop experience, and a portable mobile app in <b>React Native</b> for access anywhere.</p><p>The clean design and focus on usability ensure that students can filter teachers by subject and schedule, view details, and contact them directly via WhatsApp with a few clicks. Type safety with <b>TypeScript</b> and automated testing with <b>Jest</b> ensured the reliability and scalability of the application, resulting in a robust solution to democratize access to education at scale.</p>",
+        "client": "",
+        "event": "Rocketseat (NLW Omnistack)",
+        "link_github": "https://github.com/MarlonVictor/nlwProffy",
+        "link_live": "https://proffy-demo.netlify.app",
+        "status": "Pronto",
+        "year": "2020",
+        "category": "study",
+        "tecnologies": [
+          "React",
+          "TypeScript",
+          "React Native",
+          "Node.js",
+          "Express",
+          "SQLite",
+          "Jest"
+        ],
+        "image": "/images/projects/nlwproffy.gif",
+        "image_position": "",
+        "main_order": 2
+      },
+      {
+        "name": "RepoList",
+        "title": "Your personal library of GitHub repositories.",
+        "description": "A simple and efficient web application designed to catalog and manage your favorite GitHub repositories, using the browser's local storage for persistent and fast access.",
+        "full_description": "<p><b>RepoList</b> was developed as a practical solution for developers who want to organize their code references on GitHub without relying on browser favorites. Based on the fundamental concepts explored in the Rocketseat JavaScript ES6 course, the project focuses on DOM manipulation and asynchronous consumption of external APIs. The application uses <b>HTML5</b> and <b>CSS3</b> standards to deliver a clean, usability-focused interface.</p><p>The technical core lies in the intensive use of modern <b>JavaScript (ES6+)</b> features. I implemented classes to structure the application logic, arrow functions for a more concise syntax, and async/await to elegantly manage requests to the <b>GitHub API</b>. When searching for a repository, the data (such as name, description, stars, and owner's avatar) is dynamically fetched and persisted in the browser's <b>Local Storage</b>. This ensures that your curated list of repositories is maintained even after closing the tab, providing a continuous user experience without the need for a dedicated backend.</p>",
+        "client": "",
+        "event": "Rocketseat (ES6 Course)",
+        "link_github": "https://github.com/MarlonVictor/repoList",
+        "link_live": "https://repositorieslist.netlify.app",
+        "status": "Pronto",
+        "year": "2020",
+        "category": "study",
+        "tecnologies": ["HTML5", "CSS", "JavaScript", "Babel", "Local Storage"],
+        "image": "/images/projects/repolist.png",
+        "image_position": ""
+      }
+    ],
+    "precisa_atencao": [
+      "passwKeeper",
+      "passIn",
+      "myOrbit",
+      "nuSpotify",
+      "YieldCO",
+      "portifoli.co"
+    ]
   }
 }

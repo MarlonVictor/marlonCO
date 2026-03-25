@@ -1,6 +1,11 @@
 <template>
   <div class="w-full pt-14 space-y-8">
-    <ArrowText :text="data.technologies.title" arrow-side="down" class="pl-4" />
+    <ArrowText
+      :text="data.technologies.title"
+      arrow-side="down"
+      class="pl-4"
+      font-size="text-base"
+    />
 
     <div class="relative !overflow-hidden">
       <!-- Gradientes nas bordas para efeito fade -->

@@ -19,7 +19,7 @@
         class="hidden lg:inline-flex absolute left-0 right-0 items-center justify-center gap-8 text-base uppercase font-medium font-mono text-offwhite-200 z-10"
       >
         <li v-for="(item, index) in data.nav.links" :key="index">
-          <a :href="item.href">
+          <a @click="handleClickLink(item)" class="cursor-pointer">
             <HoverText :text="item.name" text-class="text-offwhite-200" />
           </a>
         </li>
@@ -97,8 +97,7 @@
               :class="{ 'menu-item-visible': menuOpen }"
             >
               <a
-                :href="item.href"
-                @click="menuOpen = false"
+                @click="handleClickLink(item)"
                 class="hover:text-primary-500 transition-colors duration-200"
               >
                 {{ item.name }}
@@ -143,9 +142,12 @@
 <script setup>
 import HoverText from "../ui/HoverText.vue";
 import ButtonAnimated from "../ui/ButtonAnimated.vue";
+import { useRouter } from "nuxt/app";
 
 const { data, switchLanguage } = useLocale();
 const openContactPopup = inject("openContactPopup");
+
+const router = useRouter();
 
 const isVisible = ref(true);
 const menuOpen = ref(false);
@@ -173,6 +175,11 @@ const handleKeydown = (event) => {
   if (event.key === "Escape" && menuOpen.value) {
     menuOpen.value = false;
   }
+};
+
+const handleClickLink = (item) => {
+  menuOpen.value = false;
+  router.push({ path: "/", hash: item.href });
 };
 
 onMounted(() => {
