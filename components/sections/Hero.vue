@@ -17,23 +17,27 @@
           {{ data.hero.introduction.split("—").at(1) }}
         </p>
 
-        <!-- <div class="flex gap-3 mt-10 mb-8">
-          <ButtonAnimated :text="data.hero.cta.primary.text" color="light" />
-          <ButtonAnimated :text="data.hero.cta.secondary.text" color="dark" />
-        </div> -->
+        <div class="flex gap-3 mt-10 mb-8">
+          <ButtonAnimated
+            :text="data.hero.cta.primary.text"
+            color="light"
+            @click="() => $router.push('/work')"
+          />
+          <!-- <ButtonAnimated :text="data.hero.cta.secondary.text" color="dark" /> -->
+        </div>
 
         <div
           class="hidden lg:flex justify-between absolute left-8 right-8 bottom-8"
         >
           <div
-            class="inline-flex gap-2 text-offwhite-950 leading-none tracking-tighter font-medium text-sm"
+            class="inline-flex gap-2 text-offwhite-950 leading-none tracking-tighter font-semibold text-sm"
           >
             <span>{{ data.hero.scroll }}</span>
             <Icon name="lucide:arrow-down" size="16" />
           </div>
 
           <span
-            class="text-offwhite-950 leading-none tracking-tighter font-medium text-sm"
+            class="text-offwhite-950 leading-none tracking-tighter font-semibold text-sm"
           >
             {{ data.hero.since }}
           </span>

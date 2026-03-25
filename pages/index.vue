@@ -2,6 +2,7 @@
   <Nav />
   <Hero />
   <TechCarousel />
+  <MainProjects />
 
   <div class="p-2 md:p-4">
     <div class="flex-1 bg-gray-950 rounded-2xl min-h-screen px-8 md:px-12">
@@ -15,6 +16,7 @@
 import Hero from "../components/sections/Hero.vue";
 import Nav from "../components/layout/Nav.vue";
 import TechCarousel from "../components/sections/TechCarousel.vue";
+import MainProjects from "../components/sections/MainProjects.vue";
 import Services from "../components/sections/Services.vue";
 import About from "../components/sections/About.vue";
 
