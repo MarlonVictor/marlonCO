@@ -22,7 +22,7 @@
         v-for="link in links"
         :key="link.label"
         :href="link.url"
-        target="_blank"
+        :target="link.url.startsWith('http') ? '_blank' : '_self'"
         rel="noopener noreferrer"
         class="flex-1 flex flex-row md:flex-col items-center md:justify-center gap-4 py-2 md:py-4 px-3 border border-gray-900 rounded-md transition hover:bg-[#ffffff10] hover:-translate-y-1 group"
         :class="{ 'pointer-events-none opacity-50': link.disabled }"
@@ -138,26 +138,31 @@ const links = [
     color: "text-[#0966C3]",
   },
   {
-    label: data.value.about.links.link_list[2],
-    url: "#",
-    icon: "simple-icons:wordpress",
-    color: "text-[#21759B]",
-    disabled: true,
+    label: "Buy me a Coffee",
+    url: "https://buymeacoffee.com/marlonco",
+    icon: "simple-icons:buymeacoffee",
+    color: "text-[#FFDD00]",
   },
   {
     label: data.value.about.links.link_list[3],
-    url: "#",
+    url: "work?type=extension",
     icon: "simple-icons:chromewebstore",
     color: "text-[#4285F4]",
-    disabled: true,
   },
-  {
-    label: data.value.about.links.link_list[4],
-    url: "#",
-    icon: "lucide:file-user",
-    color: "text-primary-500",
-    disabled: true,
+  { 
+    label: data.value.about.links.link_list[2], 
+    url: "#", 
+    icon: "simple-icons:wordpress", 
+    color: "text-[#21759B]", 
+    disabled: true 
   },
+  // {
+  //   label: data.value.about.links.link_list[4],
+  //   url: "#",
+  //   icon: "lucide:file-user",
+  //   color: "text-primary-500",
+  //   disabled: true,
+  // },
 ];
 
 // ── Contribution grid (API real) ────────────────────────

@@ -4,7 +4,7 @@
     class="custom-cursor"
     :class="{
       'custom-cursor--hover': cursorState.hovering,
-      'custom-cursor--hidden': cursorState.hidden,
+      'custom-cursor--hidden': cursorState.hidden || cursorState.forcedHidden,
     }"
     :style="{
       transform: `translate3d(${cursorState.x}px, ${cursorState.y}px, 0)`,
