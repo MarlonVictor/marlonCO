@@ -49,10 +49,10 @@
         <img :src="iconSimple" class="size-4" />
 
         <a
-          href=""
+          @click="openContactPopup"
           class="text-offwhite-950 text-xs !tracking-wide hidden lg:flex gap-1 items-center group mt-auto"
         >
-          Trabalhe comigo
+          {{ data.about.about_me.cta }}
           <Icon
             name="lucide:arrow-right"
             size="12"
@@ -69,4 +69,5 @@ import avatar from "~/assets/images/avatar.webp";
 import iconSimple from "~/assets/images/icon-simple.webp";
 
 const { data } = useLocale();
+const openContactPopup = inject("openContactPopup");
 </script>

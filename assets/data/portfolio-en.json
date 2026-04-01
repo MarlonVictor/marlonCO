@@ -100,7 +100,12 @@
       "available": "Available worldwide",
       "timer_text": "Current local time"
     },
-    "setup": ["Machine", "Monitor", "Keyboard", "Mouse"],
+    "setup": [
+      "Machine",
+      "Monitor",
+      "Keyboard",
+      "Mouse"
+    ],
     "contact": {
       "title": {
         "line_1": "Let's",
@@ -143,7 +148,13 @@
         "line_1": "Work &",
         "line_2": "Presence."
       },
-      "link_list": ["Github", "Linkedin", "Themes", "Extensions", "Resume"],
+      "link_list": [
+        "Github",
+        "Linkedin",
+        "Themes",
+        "Extensions",
+        "Resume"
+      ],
       "github": {
         "title": "GitHub Activity",
         "contribution": "contributions in the last 12 months"
@@ -156,7 +167,8 @@
         "line_1": "I started programming out of curiosity: I wanted to understand how things worked beneath what I saw on the screen. Over time, this curiosity turned into a profession — and the profession became something I carry with care.",
         "line_2": "What keeps me motivated is not technology itself, but what it allows to build. A product that solves a real problem, an interface that makes someone say \"this is easy\" — this kind of result still gives me the same feeling as when I wrote my first working code.",
         "line_3": "Currently, I am focused on building products with more intention: fewer thrown functionalities, more thoughtful decisions. I believe that good development and good design go hand in hand, and it is at this intersection that I want to operate."
-      }
+      },
+      "cta": "Work with me"
     }
   },
   "projects": {
@@ -267,15 +279,6 @@
         "year": "2020",
         "category": "study"
       },
-      {
-        "name": "reactFlix",
-        "description": "Descrição do projeto 18.",
-        "link_github": "https://github.com/MarlonVictor/reactFlix",
-        "link_live": "https://reactflix.netlify.app/",
-        "status": "Precisa de ajuste",
-        "year": "2020",
-        "category": "study"
-      },
       {},
       {
         "name": "weatherViewer",
@@ -285,7 +288,11 @@
         "status": "Precisa de ajuste",
         "year": "2020",
         "category": "study",
-        "tecnologies": ["Next.js", "Tailwind CSS", "Framer Motion"]
+        "tecnologies": [
+          "Next.js",
+          "Tailwind CSS",
+          "Framer Motion"
+        ]
       },
       {
         "name": "tuneNation",
@@ -295,7 +302,12 @@
         "status": "Precisa de ajuste",
         "year": "2021",
         "category": "study",
-        "tecnologies": ["Next.js", "TypeScript", "Styled Components", "DatoCMS"]
+        "tecnologies": [
+          "Next.js",
+          "TypeScript",
+          "Styled Components",
+          "DatoCMS"
+        ]
       },
       {
         "name": "viewersAsk",
@@ -339,7 +351,11 @@
         "status": "Precisa de ajuste",
         "year": "2020",
         "category": "study",
-        "tecnologies": ["HTML5", "CSS", "JavaScript"]
+        "tecnologies": [
+          "HTML5",
+          "CSS",
+          "JavaScript"
+        ]
       },
       {
         "name": "myOrbit",
@@ -373,7 +389,11 @@
         "status": "Pronto",
         "year": "2026",
         "category": "own",
-        "tecnologies": ["JavaScript", "Browser Extension", "Open Source"],
+        "tecnologies": [
+          "JavaScript",
+          "Browser Extension",
+          "Open Source"
+        ],
         "image": "/images/projects/qrco.png",
         "image_position": "0 -400px",
         "main_order": 4
@@ -390,7 +410,12 @@
         "status": "Precisa de ajuste",
         "year": "2024",
         "category": "study",
-        "tecnologies": ["Vue.js", "TypeScript", "Tailwind CSS", "Radix-ui"],
+        "tecnologies": [
+          "Vue.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Radix-ui"
+        ],
         "image": "/images/projects/vuemynotes.png",
         "image_position": "",
         "main_order": 5
@@ -407,7 +432,12 @@
         "status": "Precisa de ajuste",
         "year": "2022",
         "category": "study",
-        "tecnologies": ["HTML5", "Tailwind CSS", "TypeScript", "Theming"],
+        "tecnologies": [
+          "HTML5",
+          "Tailwind CSS",
+          "TypeScript",
+          "Theming"
+        ],
         "image": "/images/projects/jokerapp.png",
         "image_position": "0 -1000px",
         "main_order": 3
@@ -472,7 +502,13 @@
         "status": "Pronto",
         "year": "2020",
         "category": "study",
-        "tecnologies": ["HTML5", "CSS", "JavaScript", "Babel", "Local Storage"],
+        "tecnologies": [
+          "HTML5",
+          "CSS",
+          "JavaScript",
+          "Babel",
+          "Local Storage"
+        ],
         "image": "/images/projects/repolist.png",
         "image_position": ""
       }

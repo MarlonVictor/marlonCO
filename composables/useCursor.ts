@@ -5,6 +5,7 @@ interface CursorState {
   y: number;
   hovering: boolean;
   hidden: boolean;
+  forcedHidden: boolean;
 }
 
 const cursorState = ref<CursorState>({
@@ -12,6 +13,7 @@ const cursorState = ref<CursorState>({
   y: -100,
   hovering: false,
   hidden: true,
+  forcedHidden: false,
 });
 
 let initialized = false;
@@ -41,8 +43,15 @@ function isInteractive(target: EventTarget | null): boolean {
 function onMouseMove(e: MouseEvent) {
   mouseX = e.clientX;
   mouseY = e.clientY;
-  cursorState.value.hidden = false;
+  if (!cursorState.value.forcedHidden) {
+    cursorState.value.hidden = false;
+  }
   cursorState.value.hovering = isInteractive(e.target);
+}
+
+function setForcedHidden(value: boolean) {
+  cursorState.value.forcedHidden = value;
+  cursorState.value.hidden = value;
 }
 
 function onMouseDown() {
@@ -87,5 +96,6 @@ export function useCursor() {
 
   return {
     cursorState,
+    setForcedHidden,
   };
 }

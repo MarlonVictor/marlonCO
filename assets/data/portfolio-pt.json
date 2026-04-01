@@ -100,7 +100,12 @@
       "available": "Disponível em todo o mundo",
       "timer_text": "Hora local atual"
     },
-    "setup": ["Máquina", "Monitor", "Teclado", "Mouse"],
+    "setup": [
+      "Máquina",
+      "Monitor",
+      "Teclado",
+      "Mouse"
+    ],
     "contact": {
       "title": {
         "line_1": "Vamos",
@@ -143,7 +148,13 @@
         "line_1": "Trabalho &",
         "line_2": "presença."
       },
-      "link_list": ["Github", "Linkedin", "Temas", "Extensões", "Currículo"],
+      "link_list": [
+        "Github",
+        "Linkedin",
+        "Temas",
+        "Extensões",
+        "Currículo"
+      ],
       "github": {
         "title": "Atividade no GitHub",
         "contribution": "contribuições nos últimos 12 meses"
@@ -156,7 +167,8 @@
         "line_1": "Comecei a programar por curiosidade: queria entender como as coisas funcionavam por baixo do que eu via na tela. Com o tempo, essa curiosidade virou profissão — e a profissão virou algo que carrego com cuidado.",
         "line_2": "O que me mantém motivado não é a tecnologia em si, mas o que ela permite construir. Um produto que resolve um problema real, uma interface que faz alguém dizer \"isso é fácil\" — esse tipo de resultado ainda me dá a mesma sensação de quando escrevi meu primeiro código funcionando.",
         "line_3": "Atualmente estou focado em construir produtos com mais intenção: menos funcionalidades jogadas, mais decisões pensadas. Acredito que bom desenvolvimento e bom design andam juntos, e é nessa intersecção que quero atuar."
-      }
+      },
+      "cta": "Trabalhe comigo"
     }
   },
   "projects": {
@@ -285,7 +297,11 @@
         "status": "Precisa de ajuste",
         "year": "2020",
         "category": "study",
-        "tecnologies": ["Next.js", "Tailwind CSS", "Framer Motion"]
+        "tecnologies": [
+          "Next.js",
+          "Tailwind CSS",
+          "Framer Motion"
+        ]
       },
       {
         "name": "tuneNation",
@@ -295,7 +311,12 @@
         "status": "Precisa de ajuste",
         "year": "2021",
         "category": "study",
-        "tecnologies": ["Next.js", "TypeScript", "Styled Components", "DatoCMS"]
+        "tecnologies": [
+          "Next.js",
+          "TypeScript",
+          "Styled Components",
+          "DatoCMS"
+        ]
       },
       {
         "name": "viewersAsk",
@@ -339,7 +360,11 @@
         "status": "Precisa de ajuste",
         "year": "2020",
         "category": "study",
-        "tecnologies": ["HTML5", "CSS", "JavaScript"]
+        "tecnologies": [
+          "HTML5",
+          "CSS",
+          "JavaScript"
+        ]
       },
       {
         "name": "myOrbit",
@@ -373,7 +398,12 @@
         "status": "Pronto",
         "year": "2026",
         "category": "own",
-        "tecnologies": ["JavaScript", "Browser Extension", "Open Source"],
+        "subcategory": "extension",
+        "tecnologies": [
+          "JavaScript",
+          "Browser Extension",
+          "Open Source"
+        ],
         "image": "/images/projects/qrco.png",
         "image_position": "0 -400px",
         "main_order": 4
@@ -390,7 +420,13 @@
         "status": "Precisa de ajuste",
         "year": "2024",
         "category": "study",
-        "tecnologies": ["Vue.js", "TypeScript", "Tailwind CSS", "Radix-ui"],
+        "subcategory": "system",
+        "tecnologies": [
+          "Vue.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Radix-ui"
+        ],
         "image": "/images/projects/vuemynotes.png",
         "image_position": "",
         "main_order": 5
@@ -407,7 +443,13 @@
         "status": "Precisa de ajuste",
         "year": "2022",
         "category": "study",
-        "tecnologies": ["HTML5", "Tailwind CSS", "TypeScript", "Theming"],
+        "subcategory": "site",
+        "tecnologies": [
+          "HTML5",
+          "Tailwind CSS",
+          "TypeScript",
+          "Theming"
+        ],
         "image": "/images/projects/jokerapp.png",
         "image_position": "0 -1000px",
         "main_order": 3
@@ -424,6 +466,7 @@
         "status": "Pronto",
         "year": "2021",
         "category": "study",
+        "subcategory": "system",
         "tecnologies": [
           "Next.js",
           "TypeScript",
@@ -447,6 +490,7 @@
         "status": "Pronto",
         "year": "2020",
         "category": "study",
+        "subcategory": "system",
         "tecnologies": [
           "React",
           "TypeScript",
@@ -472,7 +516,14 @@
         "status": "Pronto",
         "year": "2020",
         "category": "study",
-        "tecnologies": ["HTML5", "CSS", "JavaScript", "Babel", "Local Storage"],
+        "subcategory": "site",
+        "tecnologies": [
+          "HTML5",
+          "CSS",
+          "JavaScript",
+          "Babel",
+          "Local Storage"
+        ],
         "image": "/images/projects/repolist.png",
         "image_position": ""
       }
