@@ -37,10 +37,10 @@
     "scroll": "Role para mais informações",
     "since": "Desde 2020",
     "social": {
-      "github": "https://github.com/seu-usuario",
-      "linkedin": "https://linkedin.com/in/seu-usuario",
+      "github": "https://github.com/MarlonVictor",
+      "linkedin": "https://linkedin.com/in/marloncoimbra",
       "twitter": "https://twitter.com/seu-usuario",
-      "email": "seu.email@exemplo.com"
+      "email": "umarlon.co@gmail.com"
     }
   },
   "technologies": {
@@ -55,12 +55,12 @@
         "name_line_1": "Desenvolvimento",
         "name_line_2": "Web Full-Stack",
         "title": "Desenvolvimento Web Full-Stack",
-        "description": "Construo experiências digitais completas, do backend à interface — sites, sistemas, temas WordPress e extensões de navegador com código limpo e escalável.",
+        "description": "Construo experiências digitais completas, do backend à interface — sites, sistemas, aplicações web sob medida e extensões de navegador com código limpo e escalável.",
         "stats": [
           "Landing pages",
           "Dashboards e painéis admin",
           "Sistemas para lojas e empresas",
-          "Temas & plugins WordPress",
+          "Front-ends integrados a APIs e CMS",
           "Extensões de navegador",
           "Integrações com APIs externas"
         ]
@@ -151,7 +151,6 @@
       "link_list": [
         "Github",
         "Linkedin",
-        "Temas",
         "Extensões",
         "Currículo"
       ],
@@ -207,7 +206,6 @@
       "system": "Sistemas",
       "app": "Apps",
       "extension": "Extensões",
-      "theme": "Temas WordPress",
       "bot": "Bot/Automação"
     },
     "project_stats": {

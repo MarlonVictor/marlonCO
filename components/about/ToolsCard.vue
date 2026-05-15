@@ -79,10 +79,6 @@ const TOOLS = [
   { icon: "simple-icons:postman", color: "text-[#FF6C37]" },
   { icon: "simple-icons:vitest", color: "text-[#00FF74]" },
 
-  // CMS & E-commerce
-  { icon: "simple-icons:wordpress", color: "text-[#21759B]" },
-  //   { icon: "simple-icons:shopify", color: "text-[#7AB55C]" },
-
   // Pagamentos
   //   { icon: "simple-icons:stripe", color: "text-[#4945FF]" },
 

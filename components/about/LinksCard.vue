@@ -133,7 +133,7 @@ const links = [
   },
   {
     label: data.value.about.links.link_list[1],
-    url: "#",
+    url: "https://linkedin.com/in/marloncoimbra",
     icon: "simple-icons:linkedin",
     color: "text-[#0966C3]",
   },
@@ -144,20 +144,13 @@ const links = [
     color: "text-[#FFDD00]",
   },
   {
-    label: data.value.about.links.link_list[3],
+    label: data.value.about.links.link_list[2],
     url: "work?type=extension",
     icon: "simple-icons:chromewebstore",
     color: "text-[#4285F4]",
   },
-  { 
-    label: data.value.about.links.link_list[2], 
-    url: "#", 
-    icon: "simple-icons:wordpress", 
-    color: "text-[#21759B]", 
-    disabled: true 
-  },
   // {
-  //   label: data.value.about.links.link_list[4],
+  //   label: data.value.about.links.link_list[3],
   //   url: "#",
   //   icon: "lucide:file-user",
   //   color: "text-primary-500",
