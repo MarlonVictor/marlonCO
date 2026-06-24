@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "nuxt dev",
+    "dev": "rm -rf .nuxt/dist .output && nuxt dev",
     "dev:clean": "rm -rf .nuxt .output node_modules/.cache && nuxt dev",
     "build": "nuxt build",
     "build:clean": "rm -rf .nuxt .output && nuxt build",
