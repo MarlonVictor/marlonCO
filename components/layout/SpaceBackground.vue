@@ -3,13 +3,18 @@
     <!-- Canvas for particles -->
     <canvas ref="canvasRef" class="absolute inset-0 w-full h-full" />
 
-    <img
-      :src="icon"
-      class="absolute -bottom-[15vh] sm:-bottom-[35vh] lg:-right-36 lg:-bottom-[35%] select-none pointer-events-none brand-element brightness-75 lg:w-[70vw] lg:h-[70vw]"
-      :style="{
-        transform: `translateY(${brandOffset}px) rotate(${brandRotation}deg)`,
-      }"
-    />
+    <div
+      class="brand-element-wrap absolute -bottom-[15vh] sm:-bottom-[35vh] lg:-right-36 lg:-bottom-[35%] select-none pointer-events-none lg:w-[70vw] lg:h-[70vw]"
+      :class="{ 'brand-element-wrap--ready': canAnimate }"
+    >
+      <img
+        :src="icon"
+        class="brand-element w-full h-full object-contain brightness-75"
+        :style="{
+          transform: `translateY(${brandOffset}px) rotate(${brandRotation}deg)`,
+        }"
+      />
+    </div>
 
     <!-- Gradient overlays for depth -->
     <div
@@ -34,6 +39,7 @@
 <script setup>
 import icon from "~/assets/images/icon-space-background.webp";
 
+const { canAnimate } = useIntroSplash();
 const canvasRef = ref(null);
 let animationFrame = null;
 let particles = [];
@@ -165,7 +171,7 @@ class Particle {
 
 const initCanvas = () => {
   const canvas = canvasRef.value;
-  if (!canvas) return;
+  if (!canvas) return null;
 
   const ctx = canvas.getContext("2d");
   const dpr = window.devicePixelRatio || 1;
@@ -193,32 +199,33 @@ const initCanvas = () => {
 
   let time = 0;
 
-  const animate = () => {
-    time++;
-
-    // Smooth scroll interpolation
+  const drawFrame = () => {
     scrollY += (targetScrollY - scrollY) * 0.1;
-
-    // Smooth brand element interpolation
     brandOffset.value += (targetBrandOffset - brandOffset.value) * 0.08;
     brandRotation.value += (targetBrandRotation - brandRotation.value) * 0.06;
 
     ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
 
-    // Update and draw particles
     particles.forEach((particle) => {
       particle.update(scrollY, time);
       particle.draw(ctx, time);
     });
+  };
 
+  const animate = () => {
+    time++;
+    drawFrame();
     animationFrame = requestAnimationFrame(animate);
   };
 
-  animate();
+  drawFrame();
 
-  return () => {
-    window.removeEventListener("resize", resize);
+  const startAnimation = () => {
+    if (animationFrame) return;
+    animate();
   };
+
+  return { cleanup: () => window.removeEventListener("resize", resize), startAnimation };
 };
 
 const handleScroll = () => {
@@ -233,11 +240,15 @@ const handleScroll = () => {
 
 onMounted(() => {
   if (typeof window !== "undefined") {
-    const cleanup = initCanvas();
+    const result = initCanvas();
     window.addEventListener("scroll", handleScroll, { passive: true });
 
+    if (result) {
+      useWhenIntroComplete(result.startAnimation);
+    }
+
     onUnmounted(() => {
-      if (cleanup) cleanup();
+      result?.cleanup();
       if (animationFrame) cancelAnimationFrame(animationFrame);
       window.removeEventListener("scroll", handleScroll);
     });
@@ -251,9 +262,27 @@ onMounted(() => {
   background-repeat: repeat;
 }
 
+.brand-element-wrap {
+  opacity: 0;
+  transform: scale(0.9) rotate(-14deg) translateY(28px);
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.brand-element-wrap--ready {
+  animation: brand-wrap-in 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+}
+
+@keyframes brand-wrap-in {
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0);
+  }
+}
+
 .brand-element {
   transition: transform 0.1s ease-out;
-  will-change: transform, opacity;
+  will-change: transform;
 }
 
 .brand-text {
@@ -270,5 +299,14 @@ onMounted(() => {
   text-shadow:
     0 0 100px rgba(255, 77, 29, 0.4),
     0 0 150px rgba(255, 77, 29, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-element-wrap,
+  .brand-element-wrap--ready {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
 </style>

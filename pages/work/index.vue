@@ -42,14 +42,22 @@
   </div>
 
   <section class="p-4 border-t border-offwhite-500">
-    <div class="flex flex-col gap-2">
-      <ProjectListItem
-        v-for="project in filteredProjects"
+    <div
+      class="project-list flex flex-col gap-2"
+      :class="{ 'project-list--ready': canAnimateContent }"
+    >
+      <div
+        v-for="(project, index) in filteredProjects"
         :key="project.name"
-        :project="project"
-        :categories="data.projects.categories"
-        :subcategories="data.projects.subcategories"
-      />
+        class="project-list-item"
+        :style="{ '--item-delay': `${itemDelay(index)}ms` }"
+      >
+        <ProjectListItem
+          :project="project"
+          :categories="data.projects.categories"
+          :subcategories="data.projects.subcategories"
+        />
+      </div>
     </div>
   </section>
 
@@ -202,6 +210,7 @@ useHead({
 });
 
 const { data } = useLocale();
+const { canAnimateContent } = useIntroSplash();
 const route = useRoute();
 const router = useRouter();
 
@@ -320,6 +329,10 @@ const filteredProjects = computed(() => {
   return projects;
 });
 
+function itemDelay(index) {
+  return Math.min(60 + index * 55, 650);
+}
+
 // Keyboard shortcut: Ctrl+K / Cmd+K
 function handleKeydown(e) {
   if ((e.ctrlKey || e.metaKey) && e.key === "k") {
@@ -384,5 +397,31 @@ onUnmounted(() => {
 .modal-leave-to .relative {
   transform: scale(0.95);
   opacity: 0;
+}
+
+.project-list-item {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.project-list--ready .project-list-item {
+  animation: work-item-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--item-delay, 0ms);
+}
+
+@keyframes work-item-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-list-item,
+  .project-list--ready .project-list-item {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
 </style>

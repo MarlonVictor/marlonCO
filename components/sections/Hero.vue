@@ -2,7 +2,8 @@
   <section id="home" class="h-screen p-2 md:p-4 flex relative">
     <SpaceBackground class="flex-1 rounded-2xl">
       <div
-        class="flex flex-col items-center text-center lg:items-start lg:text-left justify-center p-8 h-full absolute -top-40 left-0 right-0 lg:relative lg:top-0"
+        class="hero-content flex flex-col items-center text-center lg:items-start lg:text-left justify-center p-8 h-full absolute -top-40 left-0 right-0 lg:relative lg:top-0"
+        :class="{ 'hero-content--ready': canAnimate }"
       >
         <ArrowText :text="data.hero.name" />
 
@@ -53,8 +54,52 @@ import ArrowText from "../ui/ArrowText.vue";
 import ButtonAnimated from "../ui/ButtonAnimated.vue";
 
 const { data } = useLocale();
+const { canAnimate } = useIntroSplash();
 </script>
 
 <style scoped>
-/* Adicione estilos específicos se necessário */
+.hero-content > :deep(*) {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.hero-content--ready > :deep(*) {
+  animation: hero-item-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-content--ready > :deep(*:nth-child(1)) {
+  animation-delay: 0.05s;
+}
+
+.hero-content--ready > :deep(*:nth-child(2)) {
+  animation-delay: 0.12s;
+}
+
+.hero-content--ready > :deep(*:nth-child(3)) {
+  animation-delay: 0.19s;
+}
+
+.hero-content--ready > :deep(*:nth-child(4)) {
+  animation-delay: 0.26s;
+}
+
+.hero-content--ready > :deep(*:nth-child(5)) {
+  animation-delay: 0.33s;
+}
+
+@keyframes hero-item-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content > :deep(*),
+  .hero-content--ready > :deep(*) {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
 </style>

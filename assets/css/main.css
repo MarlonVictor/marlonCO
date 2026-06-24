@@ -38,6 +38,25 @@
   ::selection {
     @apply bg-primary-500/30 text-primary-100;
   }
+
+  html.splash-active,
+  html.splash-active body {
+    overflow: hidden;
+  }
+}
+
+html.splash-active::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #0d0d0d;
+  z-index: 99998;
+  pointer-events: all;
+}
+
+html.splash-active .app-content,
+html.splash-active .app-content * {
+  animation-play-state: paused !important;
 }
 
 .font-mono-code {

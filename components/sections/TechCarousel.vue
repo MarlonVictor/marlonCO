@@ -18,21 +18,24 @@
 
       <!-- Carrossel infinito com vue3-marquee -->
       <ClientOnly>
-        <Vue3Marquee
-          :duration="30"
-          :pause-on-hover="true"
-          :clone="true"
-          :gap="64"
-          class="py-6 !overflow-hidden"
-        >
-          <TechIcon
-            v-for="tech in technologies"
-            :key="tech.name"
-            :name="tech.name"
-            :icon="tech.icon"
-            class="mx-8"
-          />
-        </Vue3Marquee>
+        <ClientReady @ready="markReady('scroll-carousel')">
+          <Vue3Marquee
+            :duration="30"
+            :pause="!canAnimate"
+            :pause-on-hover="true"
+            :clone="true"
+            :gap="64"
+            class="py-6 !overflow-hidden"
+          >
+            <TechIcon
+              v-for="tech in technologies"
+              :key="tech.name"
+              :name="tech.name"
+              :icon="tech.icon"
+              class="mx-8"
+            />
+          </Vue3Marquee>
+        </ClientReady>
       </ClientOnly>
     </div>
   </div>
@@ -43,6 +46,7 @@ import { Vue3Marquee } from "vue3-marquee";
 import TechIcon from "../ui/TechIcon.vue";
 import ArrowText from "../ui/ArrowText.vue";
 const { data } = useLocale();
+const { markReady, canAnimate } = useIntroSplash();
 
 const technologies = [
   {
