@@ -1,22 +1,32 @@
 import { ref, onMounted, onUnmounted } from "vue";
+import { useRouter } from "vue-router";
 
 interface CursorState {
   x: number;
   y: number;
   hovering: boolean;
+  /** Label from data-cursor-hover="..." — pill cursor with text */
+  label: string | null;
   hidden: boolean;
   forcedHidden: boolean;
+  /** True after the first pointer move — gates system cursor hiding */
+  active: boolean;
 }
+
+const CURSOR_ACTIVE_CLASS = "cursor-custom-active";
 
 const cursorState = ref<CursorState>({
   x: -100,
   y: -100,
   hovering: false,
+  label: null,
   hidden: true,
   forcedHidden: false,
+  active: false,
 });
 
 let initialized = false;
+let routeResetInitialized = false;
 let mouseX = -100;
 let mouseY = -100;
 let rafId: number | null = null;
@@ -30,23 +40,58 @@ const INTERACTIVE_SELECTORS = [
   "select",
   "label[for]",
   "[data-cursor-hover]",
+  "[class*='cursor-pointer']",
 ].join(",");
 
-function isInteractive(target: EventTarget | null): boolean {
-  if (!target || !(target instanceof HTMLElement)) return false;
+function isPointerDevice(): boolean {
+  return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+}
+
+function isInsideViewport(clientX: number, clientY: number): boolean {
   return (
-    target.closest(INTERACTIVE_SELECTORS) !== null ||
-    window.getComputedStyle(target).cursor === "pointer"
+    clientX >= 0 &&
+    clientY >= 0 &&
+    clientX <= window.innerWidth &&
+    clientY <= window.innerHeight
   );
+}
+
+function getHoverTarget(target: EventTarget | null): HTMLElement | null {
+  if (!target || !(target instanceof HTMLElement)) return null;
+  return target.closest(INTERACTIVE_SELECTORS);
+}
+
+function getCursorLabel(target: HTMLElement | null): string | null {
+  if (!target) return null;
+
+  const labeled = target.closest("[data-cursor-hover]");
+  if (!labeled) return null;
+
+  const value = labeled.getAttribute("data-cursor-hover")?.trim();
+  return value || null;
+}
+
+function activateCursor() {
+  if (cursorState.value.active) return;
+  cursorState.value.active = true;
+  document.documentElement.classList.add(CURSOR_ACTIVE_CLASS);
 }
 
 function onMouseMove(e: MouseEvent) {
   mouseX = e.clientX;
   mouseY = e.clientY;
-  if (!cursorState.value.forcedHidden) {
+  activateCursor();
+
+  const inViewport = isInsideViewport(e.clientX, e.clientY);
+  if (!inViewport || cursorState.value.forcedHidden) {
+    cursorState.value.hidden = true;
+  } else {
     cursorState.value.hidden = false;
   }
-  cursorState.value.hovering = isInteractive(e.target);
+
+  const hoverTarget = inViewport ? getHoverTarget(e.target) : null;
+  cursorState.value.hovering = hoverTarget !== null;
+  cursorState.value.label = getCursorLabel(hoverTarget);
 }
 
 function setForcedHidden(value: boolean) {
@@ -63,7 +108,9 @@ function onMouseLeave() {
 }
 
 function onMouseEnter() {
-  cursorState.value.hidden = false;
+  if (!cursorState.value.forcedHidden) {
+    cursorState.value.hidden = false;
+  }
 }
 
 // Lerp loop for smooth following
@@ -78,16 +125,40 @@ function animate() {
   rafId = requestAnimationFrame(animate);
 }
 
+function resetCursorOnNavigate() {
+  cursorState.value.forcedHidden = false;
+  cursorState.value.label = null;
+  cursorState.value.hovering = false;
+  if (cursorState.value.active) {
+    cursorState.value.hidden = false;
+  }
+}
+
+function initRouteReset() {
+  if (routeResetInitialized || import.meta.server) return;
+  routeResetInitialized = true;
+
+  const router = useRouter();
+  router.afterEach(() => {
+    resetCursorOnNavigate();
+  });
+}
+
+function ensureInitialized() {
+  if (initialized || import.meta.server || !isPointerDevice()) return;
+
+  document.addEventListener("mousemove", onMouseMove, { passive: true });
+  document.addEventListener("mousedown", onMouseDown);
+  document.addEventListener("mouseleave", onMouseLeave);
+  document.addEventListener("mouseenter", onMouseEnter);
+  initRouteReset();
+  animate();
+  initialized = true;
+}
+
 export function useCursor() {
   onMounted(() => {
-    if (!initialized) {
-      document.addEventListener("mousemove", onMouseMove, { passive: true });
-      document.addEventListener("mousedown", onMouseDown);
-      document.addEventListener("mouseleave", onMouseLeave);
-      document.addEventListener("mouseenter", onMouseEnter);
-      animate();
-      initialized = true;
-    }
+    ensureInitialized();
   });
 
   onUnmounted(() => {

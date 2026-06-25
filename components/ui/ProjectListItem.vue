@@ -8,6 +8,7 @@
     <NuxtLink
       :to="`/work/${project.name}`"
       class="grid grid-cols-[1fr_1fr_100px] lg:grid-cols-[1fr_1fr_1fr_100px] items-center h-8 px-3"
+      @click="onLeave"
     >
       <div class="flex items-center gap-2">
         <span
@@ -36,7 +37,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onUnmounted } from "vue";
 import { useCursor } from "~/composables/useCursor";
 
 const props = defineProps({
@@ -72,6 +73,10 @@ function onLeave() {
   isHovered.value = false;
   setForcedHidden(false);
 }
+
+onUnmounted(() => {
+  onLeave();
+});
 
 function onMove(e) {
   imgX.value = e.clientX;

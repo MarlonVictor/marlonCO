@@ -19,7 +19,15 @@
               />
             </NuxtLink>
 
-            <h1 class="text-6xl text-neutral-950">{{ project.name }}</h1>
+            <h1
+              :key="project.name"
+              class="work-title text-6xl text-neutral-950"
+              :class="{ 'work-title--ready': canAnimateContent }"
+            >
+              <span class="work-title__line">
+                <span class="work-title__inner">{{ project.name }}</span>
+              </span>
+            </h1>
           </div>
           <p
             class="text-offwhite-950 xl:max-w-[33rem] text-justify leading-tight"
@@ -130,11 +138,13 @@
 import { computed, watch, ref, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 import { useLocale } from "../../composables/useLocale";
+import { useIntroSplash } from "../../composables/useIntroSplash";
 import Nav from "../../components/layout/Nav.vue";
 import { useHead } from "nuxt/app";
 
 const route = useRoute();
 const { data } = useLocale();
+const { canAnimateContent } = useIntroSplash();
 
 // Monitor window size
 const windowWidth = ref(

@@ -7,10 +7,15 @@
     </p>
 
     <h1
-      class="text-center text-5xl lg:text-7xl uppercase tracking-tighter font-medium leading-[1.05]"
+      class="work-title text-center text-5xl lg:text-7xl uppercase tracking-tighter font-medium leading-[1.05]"
+      :class="{ 'work-title--ready': canAnimateContent }"
     >
-      {{ data.projects.title.line_1 }} <br class="hidden lg:block" />
-      {{ data.projects.title.line_2 }}
+      <span class="work-title__line">
+        <span class="work-title__inner">{{ data.projects.title.line_1 }}</span>
+      </span>
+      <span class="work-title__line">
+        <span class="work-title__inner">{{ data.projects.title.line_2 }}</span>
+      </span>
     </h1>
   </section>
 
@@ -42,14 +47,22 @@
   </div>
 
   <section class="p-4 border-t border-offwhite-500">
-    <div class="flex flex-col gap-2">
-      <ProjectListItem
-        v-for="project in filteredProjects"
+    <div
+      class="project-list flex flex-col gap-2"
+      :class="{ 'project-list--ready': canAnimateContent }"
+    >
+      <div
+        v-for="(project, index) in filteredProjects"
         :key="project.name"
-        :project="project"
-        :categories="data.projects.categories"
-        :subcategories="data.projects.subcategories"
-      />
+        class="project-list-item"
+        :style="{ '--item-delay': `${itemDelay(index)}ms` }"
+      >
+        <ProjectListItem
+          :project="project"
+          :categories="data.projects.categories"
+          :subcategories="data.projects.subcategories"
+        />
+      </div>
     </div>
   </section>
 
@@ -96,7 +109,7 @@
           </div>
 
           <!-- Options -->
-          <div class="max-h-[300px] overflow-y-auto py-2">
+          <div class="max-h-[300px] overflow-y-auto py-2" data-lenis-prevent>
             <!-- Categoria -->
             <p
               class="px-4 pt-2 pb-1 text-[11px] font-medium text-gray-500 uppercase tracking-wider"
@@ -202,6 +215,7 @@ useHead({
 });
 
 const { data } = useLocale();
+const { canAnimateContent } = useIntroSplash();
 const route = useRoute();
 const router = useRouter();
 
@@ -211,6 +225,13 @@ const searchQuery = ref("");
 const searchInput = ref(null);
 const selectedCategory = ref(route.query.category || null);
 const selectedSubcategory = ref(route.query.type || null);
+
+const { pause, resume } = useSmoothScroll();
+
+watch(showModal, (open) => {
+  if (open) pause();
+  else resume();
+});
 
 function updateURL() {
   const query = {};
@@ -320,6 +341,10 @@ const filteredProjects = computed(() => {
   return projects;
 });
 
+function itemDelay(index) {
+  return Math.min(60 + index * 55, 650);
+}
+
 // Keyboard shortcut: Ctrl+K / Cmd+K
 function handleKeydown(e) {
   if ((e.ctrlKey || e.metaKey) && e.key === "k") {
@@ -384,5 +409,31 @@ onUnmounted(() => {
 .modal-leave-to .relative {
   transform: scale(0.95);
   opacity: 0;
+}
+
+.project-list-item {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.project-list--ready .project-list-item {
+  animation: work-item-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--item-delay, 0ms);
+}
+
+@keyframes work-item-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-list-item,
+  .project-list--ready .project-list-item {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
 </style>

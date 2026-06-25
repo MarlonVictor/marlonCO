@@ -24,6 +24,7 @@
         v-for="(project, index) in mainProjects"
         :key="index"
         class="w-full h-[39rem] rounded-lg overflow-hidden relative"
+        data-cursor-hover="Ver projeto"
         :class="{
           'lg:col-span-2': index === 0,
           'hidden lg:block': index === 4,

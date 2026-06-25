@@ -3,14 +3,20 @@
     ref="cursorEl"
     class="custom-cursor"
     :class="{
-      'custom-cursor--hover': cursorState.hovering,
-      'custom-cursor--hidden': cursorState.hidden || cursorState.forcedHidden,
+      'custom-cursor--hover': cursorState.hovering && !cursorState.label,
+      'custom-cursor--label': !!cursorState.label,
+      'custom-cursor--hidden':
+        !cursorState.active || cursorState.hidden || cursorState.forcedHidden,
     }"
     :style="{
-      transform: `translate3d(${cursorState.x}px, ${cursorState.y}px, 0)`,
+      transform: `translate3d(${cursorState.x}px, ${cursorState.y}px, 0) translate(-50%, -50%)`,
     }"
     aria-hidden="true"
-  />
+  >
+    <span v-if="cursorState.label" class="custom-cursor__label">
+      {{ cursorState.label }}
+    </span>
+  </div>
 </template>
 
 <script setup>
@@ -24,10 +30,11 @@ const { cursorState } = useCursor();
    CUSTOM CURSOR
    ========================================== */
 
-/* Hide the system cursor everywhere */
-*,
-*::before,
-*::after {
+/* Hide the system cursor only after the custom cursor has received pointer input */
+html.cursor-custom-active,
+html.cursor-custom-active *,
+html.cursor-custom-active *::before,
+html.cursor-custom-active *::after {
   cursor: none !important;
 }
 
@@ -37,10 +44,7 @@ const { cursorState } = useCursor();
   left: 0;
   z-index: 99999;
   pointer-events: none;
-
-  /* Center the shape on the pointer */
-  margin-left: -0.375rem;
-  margin-top: -0.375rem;
+  box-sizing: border-box;
 
   /* Default: square */
   width: 0.75rem;
@@ -56,7 +60,7 @@ const { cursorState } = useCursor();
     width 0.35s cubic-bezier(0.25, 1, 0.5, 1),
     height 0.35s cubic-bezier(0.25, 1, 0.5, 1),
     border-radius 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-    margin 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    padding 0.35s cubic-bezier(0.25, 1, 0.5, 1),
     opacity 0.25s ease;
 
   /* GPU acceleration */
@@ -71,8 +75,40 @@ const { cursorState } = useCursor();
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  margin-left: -0.75rem;
-  margin-top: -0.75rem;
+}
+
+/* Label state: pill expands to fit text */
+.custom-cursor--label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: 2rem;
+  padding: 0 0.875rem;
+  border-radius: 4px;
+  transition:
+    width 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    height 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    border-radius 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    padding 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.25s ease;
+}
+
+.custom-cursor__label {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  /* Opposite of the white cursor bg — stays visible after difference blend */
+  color: #000;
+  white-space: nowrap;
+  text-transform: uppercase;
 }
 
 /* Hidden when cursor leaves viewport */
@@ -86,9 +122,10 @@ const { cursorState } = useCursor();
     display: none;
   }
 
-  *,
-  *::before,
-  *::after {
+  html.cursor-custom-active,
+  html.cursor-custom-active *,
+  html.cursor-custom-active *::before,
+  html.cursor-custom-active *::after {
     cursor: auto !important;
   }
 }
@@ -99,9 +136,10 @@ const { cursorState } = useCursor();
     display: none;
   }
 
-  *,
-  *::before,
-  *::after {
+  html.cursor-custom-active,
+  html.cursor-custom-active *,
+  html.cursor-custom-active *::before,
+  html.cursor-custom-active *::after {
     cursor: auto !important;
   }
 }

@@ -3,19 +3,23 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "nuxt dev",
-    "build": "nuxt build",
+    "dev": "rm -rf .nuxt/dist .output && nuxt dev",
+    "dev:clean": "rm -rf .nuxt .output node_modules/.cache && nuxt dev",
+    "build": "rm -rf .output && nuxt build",
+    "postbuild": "rm -rf .nuxt/dist",
+    "build:clean": "rm -rf .nuxt .output && nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
   "dependencies": {
     "@vueuse/core": "^14.2.1",
+    "lenis": "^1.3.23",
     "nuxt": "^3.15.1",
     "vue": "^3.5.13",
     "vue3-marquee": "^4.2.2"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.2",
-    "@nuxt/icon": "^1.9.3"
+    "@nuxt/icon": "^1.9.3",
+    "@nuxtjs/tailwindcss": "^6.12.2"
   }
 }

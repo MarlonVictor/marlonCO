@@ -196,7 +196,7 @@ const checkScreenSize = () => {
 onMounted(() => {
   checkScreenSize();
   window.addEventListener("resize", checkScreenSize);
-  startAutoPlay();
+  useWhenIntroComplete(startAutoPlay);
 });
 
 onUnmounted(() => {
