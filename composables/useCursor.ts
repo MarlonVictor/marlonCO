@@ -1,4 +1,5 @@
 import { ref, onMounted, onUnmounted } from "vue";
+import { useRouter } from "vue-router";
 
 interface CursorState {
   x: number;
@@ -25,6 +26,7 @@ const cursorState = ref<CursorState>({
 });
 
 let initialized = false;
+let routeResetInitialized = false;
 let mouseX = -100;
 let mouseY = -100;
 let rafId: number | null = null;
@@ -123,6 +125,25 @@ function animate() {
   rafId = requestAnimationFrame(animate);
 }
 
+function resetCursorOnNavigate() {
+  cursorState.value.forcedHidden = false;
+  cursorState.value.label = null;
+  cursorState.value.hovering = false;
+  if (cursorState.value.active) {
+    cursorState.value.hidden = false;
+  }
+}
+
+function initRouteReset() {
+  if (routeResetInitialized || import.meta.server) return;
+  routeResetInitialized = true;
+
+  const router = useRouter();
+  router.afterEach(() => {
+    resetCursorOnNavigate();
+  });
+}
+
 function ensureInitialized() {
   if (initialized || import.meta.server || !isPointerDevice()) return;
 
@@ -130,6 +151,7 @@ function ensureInitialized() {
   document.addEventListener("mousedown", onMouseDown);
   document.addEventListener("mouseleave", onMouseLeave);
   document.addEventListener("mouseenter", onMouseEnter);
+  initRouteReset();
   animate();
   initialized = true;
 }

@@ -11,6 +11,7 @@
         <!-- Panel: fixo à direita, entra da direita -->
         <div
           class="panel relative flex flex-col w-full sm:max-w-xl h-max border-l border-[#ffffff15] shadow-2xl overflow-y-auto sm:rounded-l-xl"
+          data-lenis-prevent
           @click.stop
         >
           <!-- Conteúdo em cards -->
@@ -162,7 +163,7 @@
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   modelValue: {
     type: Boolean,
     default: false,
@@ -170,6 +171,16 @@ defineProps({
 });
 
 const emit = defineEmits(["update:modelValue"]);
+
+const { pause, resume } = useSmoothScroll();
+
+watch(
+  () => props.modelValue,
+  (open) => {
+    if (open) pause();
+    else resume();
+  },
+);
 
 const { data } = useLocale();
 

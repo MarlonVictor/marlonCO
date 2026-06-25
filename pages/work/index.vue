@@ -7,10 +7,15 @@
     </p>
 
     <h1
-      class="text-center text-5xl lg:text-7xl uppercase tracking-tighter font-medium leading-[1.05]"
+      class="work-title text-center text-5xl lg:text-7xl uppercase tracking-tighter font-medium leading-[1.05]"
+      :class="{ 'work-title--ready': canAnimateContent }"
     >
-      {{ data.projects.title.line_1 }} <br class="hidden lg:block" />
-      {{ data.projects.title.line_2 }}
+      <span class="work-title__line">
+        <span class="work-title__inner">{{ data.projects.title.line_1 }}</span>
+      </span>
+      <span class="work-title__line">
+        <span class="work-title__inner">{{ data.projects.title.line_2 }}</span>
+      </span>
     </h1>
   </section>
 
@@ -104,7 +109,7 @@
           </div>
 
           <!-- Options -->
-          <div class="max-h-[300px] overflow-y-auto py-2">
+          <div class="max-h-[300px] overflow-y-auto py-2" data-lenis-prevent>
             <!-- Categoria -->
             <p
               class="px-4 pt-2 pb-1 text-[11px] font-medium text-gray-500 uppercase tracking-wider"
@@ -220,6 +225,13 @@ const searchQuery = ref("");
 const searchInput = ref(null);
 const selectedCategory = ref(route.query.category || null);
 const selectedSubcategory = ref(route.query.type || null);
+
+const { pause, resume } = useSmoothScroll();
+
+watch(showModal, (open) => {
+  if (open) pause();
+  else resume();
+});
 
 function updateURL() {
   const query = {};
