@@ -3,14 +3,16 @@
     <div class="flex items-end">
       <div class="inline-flex items-center gap-5 flex-1">
         <h2 class="text-6xl font-normal text-neutral-950 tracking-tight">
-          Meus projetos
+          {{ data.projects.main_section.title }}
         </h2>
 
         <Icon name="lucide:arrow-down" class="size-10 translate-y-2" />
       </div>
 
       <NuxtLink to="/work" class="flex items-center gap-2 group">
-        <span class="font-mono text-sm !tracking-wider">Todos projetos</span>
+        <span class="font-mono text-sm !tracking-wider">
+          {{ data.projects.main_section.view_all }}
+        </span>
         <Icon
           name="lucide:arrow-right"
           class="size-4 transition-transform duration-300 group-hover:-rotate-45"
@@ -24,7 +26,7 @@
         v-for="(project, index) in mainProjects"
         :key="index"
         class="w-full h-[39rem] rounded-lg overflow-hidden relative"
-        data-cursor-hover="Ver projeto"
+        :data-cursor-hover="data.cursor.see_project"
         :class="{
           'lg:col-span-2': index === 0,
           'hidden lg:block': index === 4,
