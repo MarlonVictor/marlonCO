@@ -171,6 +171,10 @@
     }
   },
   "projects": {
+    "main_section": {
+      "title": "Meus projetos",
+      "view_all": "Todos projetos"
+    },
     "title": {
       "line_1": "Tudo que foi construído,",
       "line_2": "reunido bem aqui."
@@ -453,6 +457,31 @@
         "main_order": 3
       },
       {
+        "name": "eventLab",
+        "title": "Onde arquitetura moderna encontra aprendizado fluido.",
+        "description": "Uma plataforma de estudos moderna para desenvolvedores assistirem aulas, acompanharem o cronograma do curso e acessarem materiais complementares — criada durante o Ignite Lab 02 da Rocketseat.",
+        "full_description": "<p>O <b>eventLab</b> foi desenvolvido durante o Ignite Lab 02, um evento da Rocketseat criado para explorar os limites da arquitetura web moderna. O projeto é uma plataforma completa de videoaulas onde desenvolvedores podem se cadastrar, seguir um cronograma estruturado e assistir às aulas por meio de uma interface refinada com efeitos de glassmorphism.</p><p>A escolha técnica de destaque foi a camada de dados: ao invés de uma API REST tradicional, o app consulta um CMS headless da <b>GraphCMS</b> via <b>GraphQL</b> utilizando o <b>Apollo Client</b> — possibilitando uma busca de dados declarativa e com tipagem segura diretamente vinculada à UI. A reprodução de vídeo é gerenciada pelo <b>Vime Player</b>, um player open-source com integração profunda ao React. A interface foi construída com <b>React</b>, <b>Vite</b>, <b>TypeScript</b> e <b>Tailwind CSS</b>, com o <b>Phosphor Icons</b> reforçando a estética limpa e voltada para desenvolvedores. O resultado é uma aplicação rápida e orientada a conteúdo que demonstra como um CMS headless e GraphQL podem substituir backends convencionais em produtos com grande volume de conteúdo.</p>",
+        "client": "",
+        "event": "Rocketseat (Ignite Lab 02)",
+        "link_github": "https://github.com/MarlonVictor/eventLab",
+        "link_live": "https://eventlab.vercel.app",
+        "status": "Pronto",
+        "year": "2022",
+        "category": "study",
+        "subcategory": "system",
+        "tecnologies": [
+          "React",
+          "TypeScript",
+          "GraphQL",
+          "Vite",
+          "Apollo Client",
+          "Tailwind CSS",
+          "Vime Player"
+        ],
+        "image": "/images/projects/eventlab.png",
+        "image_position": ""
+      },
+      {
         "name": "RocketCast",
         "title": "Experiência nativa e performance.",
         "description": "Um Progressive Web App de alta performance desenvolvido para entusiastas de tecnologia, focado em oferecer uma experiência imersiva e fluida para o consumo dos podcasts da Rocketseat.",
@@ -475,6 +504,60 @@
         "image": "/images/projects/rocketcast.gif",
         "image_position": "",
         "main_order": 1
+      },
+      {
+        "name": "nlwHeart",
+        "title": "Conexão em tempo real e entusiasmo compartilhado.",
+        "description": "Uma plataforma em tempo real para o evento DoWhile 2021 — onde usuários fazem login com o GitHub e compartilham suas expectativas ao vivo. O projeto inclui um cliente web, um aplicativo mobile e uma API WebSocket.",
+        "full_description": "<p>O <b>nlwHeart</b> foi desenvolvido durante a NLW Heat da Rocketseat como um desafio full-stack que vai além da abordagem de camada única. O projeto abrange três frentes simultaneamente: um cliente web, uma aplicação mobile cross-platform e uma API em tempo real — todas integradas via <b>Socket.IO</b> para propagação instantânea de mensagens sem a necessidade de atualização da página.</p><p>A autenticação é gerenciada inteiramente através do <b>GitHub OAuth</b>, oferecendo uma experiência de login sem atritos para desenvolvedores. No lado web, foram utilizados <b>React</b>, <b>Vite</b> e <b>Tailwind CSS</b> para uma construção rápida e responsiva, com <b>Framer Motion</b> adicionando fluidez às animações de layout e notificações toast. A versão mobile foi desenvolvida com <b>React Native</b> e <b>Expo</b>, garantindo entrega consistente entre iOS e Android. O servidor, construído com <b>Node.js</b>, <b>Express</b> e <b>Prisma</b> sobre <b>SQLite</b>, orquestra o fluxo OAuth, a emissão de JWT e a transmissão de eventos em tempo real — unindo as três camadas em uma arquitetura coesa e pronta para produção.</p>",
+        "client": "",
+        "event": "Rocketseat - NLW Heat (DoWhile 2021)",
+        "link_github": "https://github.com/MarlonVictor/nlwHeart",
+        "link_live": "https://dowhile-demo.netlify.app",
+        "status": "Pronto",
+        "year": "2021",
+        "category": "study",
+        "tecnologies": [
+          "React",
+          "Node.js",
+          "React Native",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Socket.IO",
+          "Expo",
+          "Express",
+          "Prisma",
+          "SQLite"
+        ],
+        "image": "/images/projects/nlwheart.png",
+        "image_position": ""
+      },
+      {
+        "name": "myFinances",
+        "title": "Clareza total sobre o seu orçamento pessoal.",
+        "description": "Um Progressive Web App para controle de finanças pessoais com autenticação Google. Registre entradas e saídas, organize por categoria e tenha uma visão clara do seu saldo em tempo real.",
+        "full_description": "<p>O <b>myFinances</b> foi construído para eliminar a fricção no controle financeiro pessoal, combinando uma interface limpa com um backend robusto em tempo real. A autenticação via Google OAuth, gerenciada pelo <b>Firebase Authentication</b>, garante um login seguro e sem atritos, enquanto o <b>Firebase Realtime Database</b> persiste e sincroniza todas as transações instantaneamente entre sessões — sem necessidade de atualização manual.</p><p>No frontend, <b>React</b> com <b>TypeScript</b> e <b>SASS</b> entregam um dashboard leve, baseado em cards, que separa entradas e saídas em métricas de resumo claras. O tratamento e a validação de formulários são feitos com <b>Formik</b> e <b>Yup</b>, garantindo a integridade dos dados antes de qualquer registro chegar ao banco. O <b>Framer Motion</b> dá vida às transições e interações de modais, enquanto o <b>React Router</b> gerencia o fluxo de navegação protegido por autenticação. O produto final é um PWA implantável em qualquer host estático, oferecendo uma experiência nativa para o controle financeiro do dia a dia.</p>",
+        "client": "",
+        "event": "",
+        "link_github": "https://github.com/MarlonVictor/myFinances",
+        "link_live": "https://myfinances-ten.vercel.app",
+        "status": "Precisa de ajuste",
+        "year": "2021",
+        "category": "study",
+        "subcategory": "system",
+        "tecnologies": [
+          "React",
+          "Firebase",
+          "SASS",
+          "TypeScript",
+          "Framer Motion",
+          "Formik",
+          "React Router"
+        ],
+        "image": "/images/projects/myfinances.png",
+        "image_position": ""
       },
       {
         "name": "nlwProffy",
@@ -534,5 +617,9 @@
       "YieldCO",
       "portifoli.co"
     ]
+  },
+  "cursor": {
+    "see_project": "Ver projeto",
+    "see_detail": "Ver detalhes"
   }
 }

@@ -108,6 +108,7 @@
         v-for="(project, index) in nextProjects"
         :key="index"
         class="w-full h-[18rem] lg:h-[39rem] rounded-lg overflow-hidden relative"
+        :data-cursor-hover="data.cursor.see_project"
       >
         <img
           :src="project.image"

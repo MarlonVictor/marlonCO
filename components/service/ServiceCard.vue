@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="isMobileScreen || (!isSmallScreen && !hasCardActive)"
-    data-cursor-hover
+    :data-cursor-hover="data.cursor.see_detail"
     class="card border border-[#262626a4] rounded-lg flex flex-col overflow-hidden relative h-[32rem] group flex-1"
   >
     <div
@@ -22,6 +22,7 @@
     v-else
     class="card border border-[#262626a4] rounded-lg overflow-hidden relative h-[32rem] flex group"
     :class="isActive ? 'flex-1' : 'w-20'"
+    :data-cursor-hover="!isActive ? data.cursor.see_detail : ''"
   >
     <div
       v-if="!isActive"
@@ -66,6 +67,8 @@
 </template>
 
 <script setup>
+const { data } = useLocale();
+
 defineProps({
   isActive: {
     type: Boolean,
