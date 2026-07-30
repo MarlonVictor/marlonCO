@@ -34,7 +34,9 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          innerHTML: 'document.documentElement.classList.add("splash-active")',
+          // Mantido em sincronia com SKIP_SPLASH_PATHS em plugins/intro-splash.client.ts
+          innerHTML:
+            'if(!/^\\/freela(\\/|$)/.test(location.pathname))document.documentElement.classList.add("splash-active")',
           tagPosition: "head",
         },
       ],

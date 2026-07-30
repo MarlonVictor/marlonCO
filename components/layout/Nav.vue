@@ -18,18 +18,19 @@
       <ul
         class="hidden lg:inline-flex absolute left-0 right-0 items-center justify-center gap-8 text-base uppercase font-medium font-mono text-offwhite-200 z-10"
       >
-        <li v-for="(item, index) in data.nav.links" :key="index">
+        <li v-for="(item, index) in navLinks" :key="index">
           <a @click="handleClickLink(item)" class="cursor-pointer">
             <HoverText :text="item.name" text-class="text-offwhite-200" />
           </a>
         </li>
       </ul>
 
-      <!-- Desktop language switcher (hidden on ≤ 1024px) -->
+      <!-- Desktop CTA + language switcher (hidden on ≤ 1024px) -->
       <div class="hidden lg:flex items-center gap-6 z-10 relative">
         <ButtonAnimated :text="data.nav.cta" @click="openContactPopup?.()" />
 
         <ul
+          v-if="showLanguageSwitcher"
           class="flex items-center text-offwhite-200 text-base font-mono space-x-2"
         >
           <li>
@@ -88,7 +89,7 @@
             class="flex flex-col items-center gap-8 text-4xl uppercase font-medium font-mono text-offwhite-200"
           >
             <li
-              v-for="(item, index) in data.nav.links"
+              v-for="(item, index) in navLinks"
               :key="index"
               :style="{
                 transitionDelay: menuOpen ? `${100 + index * 80}ms` : '0ms',
@@ -106,10 +107,14 @@
           </ul>
 
           <!-- Divider -->
-          <div class="w-12 h-px bg-offwhite-100/20"></div>
+          <div
+            v-if="showLanguageSwitcher"
+            class="w-12 h-px bg-offwhite-100/20"
+          ></div>
 
           <!-- Language switcher -->
           <ul
+            v-if="showLanguageSwitcher"
             class="flex items-center text-offwhite-400 text-lg font-mono space-x-3"
             @click="menuOpen = false"
           >
@@ -144,10 +149,27 @@ import HoverText from "../ui/HoverText.vue";
 import ButtonAnimated from "../ui/ButtonAnimated.vue";
 import { useRouter } from "nuxt/app";
 
+const props = defineProps({
+  links: {
+    type: Array,
+    default: null,
+  },
+  basePath: {
+    type: String,
+    default: "/",
+  },
+  showLanguageSwitcher: {
+    type: Boolean,
+    default: true,
+  },
+});
+
 const { data, switchLanguage } = useLocale();
 const openContactPopup = inject("openContactPopup");
 
 const router = useRouter();
+
+const navLinks = computed(() => props.links ?? data.value.nav.links);
 
 const isVisible = ref(true);
 const menuOpen = ref(false);
@@ -179,7 +201,7 @@ const handleKeydown = (event) => {
 
 const handleClickLink = (item) => {
   menuOpen.value = false;
-  router.push({ path: "/", hash: item.href });
+  router.push({ path: props.basePath, hash: item.href });
 };
 
 onMounted(() => {
