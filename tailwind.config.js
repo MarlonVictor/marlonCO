@@ -18,7 +18,9 @@ export default {
           "sans-serif",
         ],
         mono: ['"Monomaniac One"', "monospace"],
+        serif: ['"Instrument Serif"', "Georgia", "serif"],
         "mono-code": ['"JetBrains Mono"', "monospace"],
+        display: ["Anton", "Impact", "sans-serif"],
       },
       colors: {
         offwhite: {

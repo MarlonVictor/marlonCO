@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900">
+<rect width="1440" height="900" fill="#0D0D0D"/>
+<rect width="1440" height="80" fill="#141414"/><circle cx="44" cy="40" r="7" fill="#333"/><circle cx="72" cy="40" r="7" fill="#333"/><circle cx="100" cy="40" r="7" fill="#333"/>
+<rect x="360" y="24" width="720" height="32" rx="16" fill="#1e1e1e"/>
+<rect x="420" y="150" width="600" height="60" rx="8" fill="#F5F0E9" opacity="1"/><rect x="420" y="260" width="600" height="64" rx="10" fill="#1c1c1c" opacity="1"/><rect x="420" y="360" width="600" height="64" rx="10" fill="#1c1c1c" opacity="1"/><rect x="420" y="460" width="600" height="64" rx="10" fill="#1c1c1c" opacity="1"/><rect x="420" y="560" width="600" height="64" rx="10" fill="#1c1c1c" opacity="1"/><rect x="420" y="680" width="600" height="60" rx="30" fill="#4D7CFF" opacity="1"/>
+<text x="1410" y="874" text-anchor="end" font-family="monospace" font-size="22" fill="#555">case-02 · print 05 · placeholder</text>
+</svg>

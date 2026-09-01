@@ -27,7 +27,10 @@
 
       <!-- Desktop CTA + language switcher (hidden on ≤ 1024px) -->
       <div class="hidden lg:flex items-center gap-6 z-10 relative">
-        <ButtonAnimated :text="data.nav.cta" @click="openContactPopup?.()" />
+        <a v-if="ctaHref" :href="ctaHref" target="_blank" rel="noopener">
+          <ButtonAnimated :text="ctaText || data.nav.cta" />
+        </a>
+        <ButtonAnimated v-else :text="data.nav.cta" @click="openContactPopup?.()" />
 
         <ul
           v-if="showLanguageSwitcher"
@@ -162,6 +165,15 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  // CTA alternativo (ex.: /freela abre WhatsApp em vez do popup de contato).
+  ctaText: {
+    type: String,
+    default: null,
+  },
+  ctaHref: {
+    type: String,
+    default: null,
+  },
 });
 
 const { data, switchLanguage } = useLocale();
@@ -201,7 +213,12 @@ const handleKeydown = (event) => {
 
 const handleClickLink = (item) => {
   menuOpen.value = false;
-  router.push({ path: props.basePath, hash: item.href });
+  // Links de âncora navegam dentro do basePath; caminhos absolutos são rotas.
+  if (item.href?.startsWith("#")) {
+    router.push({ path: props.basePath, hash: item.href });
+  } else {
+    router.push(item.href);
+  }
 };
 
 onMounted(() => {

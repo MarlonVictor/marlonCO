@@ -1,6 +1,11 @@
 <template>
   <li
-    class="list-none transition text-gray-700 hover:text-gray-100 hover:bg-primary-500 rounded-md"
+    class="list-none transition rounded-md"
+    :class="
+      tone === 'dark'
+        ? 'text-offwhite-950 hover:text-gray-950 hover:bg-primary-500'
+        : 'text-gray-700 hover:text-gray-100 hover:bg-primary-500'
+    "
     @mouseenter="onEnter"
     @mouseleave="onLeave"
     @mousemove="onMove"
@@ -44,6 +49,13 @@ const props = defineProps({
   project: { type: Object, required: true },
   categories: { type: Object, default: () => ({}) },
   subcategories: { type: Object, default: () => ({}) },
+  tone: {
+    type: String,
+    default: "light",
+    validator(value) {
+      return ["light", "dark"].includes(value);
+    },
+  },
 });
 
 const categoryName = computed(() => {

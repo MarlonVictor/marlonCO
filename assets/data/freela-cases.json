@@ -1,0 +1,125 @@
+{
+  "_aviso": "PLACEHOLDER — dados e imagens de exemplo para desenvolvimento da /freelaa. Todo item com \"placeholder\": true (e os SVGs em public/images/freela-cases) deve ser substituido por case real antes de publicar.",
+  "cases": [
+    {
+      "slug": "case-01",
+      "placeholder": true,
+      "client": "Cliente Exemplo 01",
+      "segment": "Clínica odontológica",
+      "year": 2025,
+      "title": "Site institucional com agendamento",
+      "problem": "Agendamento só por telefone, perdendo contato fora do horário comercial.",
+      "solution": "Site institucional com formulário integrado ao WhatsApp e página por especialidade.",
+      "result": "3x mais contatos qualificados no primeiro mês",
+      "stack": [
+        "Nuxt",
+        "Tailwind",
+        "Vercel"
+      ],
+      "image": "/images/freela-cases/case-01/01.svg",
+      "url": null,
+      "duration": "3 semanas",
+      "color": "#FF4D1D",
+      "images": [
+        "/images/freela-cases/case-01/01.svg",
+        "/images/freela-cases/case-01/02.svg",
+        "/images/freela-cases/case-01/03.svg",
+        "/images/freela-cases/case-01/04.svg",
+        "/images/freela-cases/case-01/05.svg",
+        "/images/freela-cases/case-01/06.svg"
+      ],
+      "colorAlt": "#FFB01D",
+      "tint": "#FFE3D6"
+    },
+    {
+      "slug": "case-02",
+      "placeholder": true,
+      "client": "Cliente Exemplo 02",
+      "segment": "E-commerce de nicho",
+      "year": 2025,
+      "title": "Landing page de lançamento",
+      "problem": "Campanha paga jogando tráfego numa página lenta, com 70% de abandono.",
+      "solution": "Landing enxuta, LCP abaixo de 1s e checkout em duas etapas.",
+      "result": "Conversão de 1,2% para 4,8%",
+      "stack": [
+        "Nuxt",
+        "Tailwind",
+        "GSAP"
+      ],
+      "image": "/images/freela-cases/case-02/01.svg",
+      "url": null,
+      "duration": "2 semanas",
+      "color": "#4D7CFF",
+      "images": [
+        "/images/freela-cases/case-02/01.svg",
+        "/images/freela-cases/case-02/02.svg",
+        "/images/freela-cases/case-02/03.svg",
+        "/images/freela-cases/case-02/04.svg",
+        "/images/freela-cases/case-02/05.svg",
+        "/images/freela-cases/case-02/06.svg"
+      ],
+      "colorAlt": "#8A4DFF",
+      "tint": "#DDE7FF"
+    },
+    {
+      "slug": "case-03",
+      "placeholder": true,
+      "client": "Cliente Exemplo 03",
+      "segment": "Estúdio de arquitetura",
+      "year": 2024,
+      "title": "Portfólio visual e gestão de obras",
+      "problem": "Projetos apresentados por PDF pesado enviado no e-mail.",
+      "solution": "Galeria responsiva com carregamento progressivo e área do cliente.",
+      "result": "Apresentação de projeto em 1 link, sem anexo",
+      "stack": [
+        "Vue",
+        "Vite",
+        "Cloudflare"
+      ],
+      "image": "/images/freela-cases/case-03/01.svg",
+      "url": null,
+      "duration": "5 semanas",
+      "color": "#2EE6A8",
+      "images": [
+        "/images/freela-cases/case-03/01.svg",
+        "/images/freela-cases/case-03/02.svg",
+        "/images/freela-cases/case-03/03.svg",
+        "/images/freela-cases/case-03/04.svg",
+        "/images/freela-cases/case-03/05.svg",
+        "/images/freela-cases/case-03/06.svg"
+      ],
+      "colorAlt": "#2E9BE6",
+      "tint": "#D8F6EA"
+    },
+    {
+      "slug": "case-04",
+      "placeholder": true,
+      "client": "Cliente Exemplo 04",
+      "segment": "Serviços B2B",
+      "year": 2024,
+      "title": "Redesign e painel interno",
+      "problem": "Site desatualizado e planilha manual para controlar propostas.",
+      "solution": "Redesign completo mais painel interno para acompanhar propostas.",
+      "result": "8h/semana de trabalho manual eliminadas",
+      "stack": [
+        "Nuxt",
+        "Supabase",
+        "Tailwind"
+      ],
+      "image": "/images/freela-cases/case-04/01.svg",
+      "url": null,
+      "duration": "6 semanas",
+      "color": "#C77DFF",
+      "images": [
+        "/images/freela-cases/case-04/01.svg",
+        "/images/freela-cases/case-04/02.svg",
+        "/images/freela-cases/case-04/03.svg",
+        "/images/freela-cases/case-04/04.svg",
+        "/images/freela-cases/case-04/05.svg",
+        "/images/freela-cases/case-04/06.svg"
+      ],
+      "colorAlt": "#FF4D8F",
+      "tint": "#F2E2FF"
+    }
+  ]
+}

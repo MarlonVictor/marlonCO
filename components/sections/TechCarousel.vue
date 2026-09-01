@@ -45,6 +45,7 @@
 import { Vue3Marquee } from "vue3-marquee";
 import TechIcon from "../ui/TechIcon.vue";
 import ArrowText from "../ui/ArrowText.vue";
+import ClientReady from "../ui/ClientReady.vue";
 const { data } = useLocale();
 const { markReady, canAnimate } = useIntroSplash();
 

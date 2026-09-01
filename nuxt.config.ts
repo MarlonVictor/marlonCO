@@ -29,14 +29,14 @@ export default defineNuxtConfig({
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Monomaniac+One&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Anton&family=Instrument+Serif:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Monomaniac+One&display=swap",
         },
       ],
       script: [
         {
           // Mantido em sincronia com SKIP_SPLASH_PATHS em plugins/intro-splash.client.ts
           innerHTML:
-            'if(!/^\\/freela(\\/|$)/.test(location.pathname))document.documentElement.classList.add("splash-active")',
+            'if(!/^\\/freela/.test(location.pathname))document.documentElement.classList.add("splash-active")',
           tagPosition: "head",
         },
       ],

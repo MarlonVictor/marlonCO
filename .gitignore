@@ -24,3 +24,12 @@ logs
 !.env.example
 
 /content
+# Rascunhos das landings freela (mantido apenas "freelaa")
+/pages/freela.vue
+/pages/freela2/
+/pages/freela3/
+/pages/freela4/
+/components/freela/
+/components/freela2/
+/components/freela3/
+/components/freela4/

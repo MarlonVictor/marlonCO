@@ -1,7 +1,7 @@
 // Rotas que pulam o splash — páginas de conversão não podem gastar o primeiro
 // segundo em animação. Precisa marcar isComplete para liberar o pointer-events
 // do app.vue e dar start no Lenis.
-const SKIP_SPLASH_PATHS = ["/freela"];
+const SKIP_SPLASH_PATHS = ["/freela", "/freela2", "/freela3", "/freela4", "/freelaa"];
 
 export default defineNuxtPlugin(() => {
   const { showSplash, isComplete, initSplash } = useIntroSplash();
